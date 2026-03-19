@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beach escapes · sun, sand & games | PicnicGames</title>
+  <!-- Bootstrap 5 grid & utilities -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- custom css -->
+   <link rel="stylesheet" href="style.css">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <style>
+    /* ----- global reset & professional base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(145deg, #e2f0f7 0%, #d4e9f2 100%);
+      color: #0f2f3e;
+      line-height: 1.6;
+    }
+
+    /* ===== HERO SECTION - EXACTLY LIKE ABOUT PAGE ===== */
+    .beach-hero {
+      background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+      padding: 6rem 0;
+      position: relative;
+      color: white;
+      overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Animated wave effect */
+    .beach-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 2;
+    }
+
+    .beach-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, rgba(200, 180, 140, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .beach-hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Decoration lines */
+    .hero-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .decoration-line {
+      width: 50px;
+      height: 2px;
+      background: rgba(200, 180, 140, 0.4);
+    }
+
+    .decoration-icon {
+      color: #c8b48c;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .beach-hero-subtitle {
+      color: #c8b48c;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      display: inline-block;
+      background: rgba(200, 180, 140, 0.1);
+      padding: 0.6rem 2rem;
+      border: 1px solid rgba(200, 180, 140, 0.3);
+      margin-bottom: 1.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      position: relative;
+    }
+
+    .beach-hero-subtitle::before,
+    .beach-hero-subtitle::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #c8b48c;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .beach-hero-subtitle::before {
+      left: -5px;
+    }
+
+    .beach-hero-subtitle::after {
+      right: -5px;
+    }
+
+
+    .beach-hero-text {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 60px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(200, 180, 140, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Floating Elements */
+    .floating-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .float-icon {
+      position: absolute;
+      font-size: 2.5rem;
+      opacity: 0.2;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .float-icon:nth-child(1) { top: 12%; left: 12%; animation-delay: 0s; }
+    .float-icon:nth-child(2) { top: 60%; right: 10%; animation-delay: 1s; }
+    .float-icon:nth-child(3) { bottom: 20%; left: 10%; animation-delay: 2s; }
+    .float-icon:nth-child(4) { top: 30%; right: 25%; animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    /* ===== ALTERNATING BEACH CARDS ===== */
+    .beach-card {
+      background: #ffffff;
+      border-radius: 36px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      box-shadow: 0 25px 35px -14px rgba(2,70,90,0.2), 0 0 0 1px rgba(255,255,255,0.7) inset;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+
+    .beach-card:hover {
+      box-shadow: 0 30px 45px -12px #0a5b78;
+      transform: translateY(-6px);
+    }
+/* FIXED: Beach Image - Wave Shape with Proper Border */
+.beach-image {
+  padding: 0;
+  min-height: 320px;
+  background: #aac9db;
+  overflow: hidden;
+
+  /* SAME WAVE SHAPE as women's page */
+  border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+  
+  /* Remove any extra borders/shadow that might be causing the issue */
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.beach-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+  
+  /* Ensure image follows same wave shape */
+  border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+}
+
+/* Remove any extra border from card */
+.beach-card {
+  border: none;
+  overflow: hidden;
+}
+
+/* FIXED: Beach Image - Wave Shape with Proper Border */
+.beach-image {
+  padding: 0;
+  min-height: 320px;
+  background: #aac9db;
+  overflow: hidden;
+
+  /* SAME WAVE SHAPE as women's page */
+  border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+  
+  /* Remove any extra borders/shadow */
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.beach-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+  
+  /* Ensure image follows same wave shape */
+  border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+}
+
+/* Remove any extra border from card */
+.beach-card {
+  border: none;
+  overflow: hidden;
+}
+
+/* Optional Gold Corner Accents */
+.beach-image::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid #c8b48c;
+  border-left: 2px solid #c8b48c;
+  z-index: 10;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.beach-image::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-bottom: 2px solid #c8b48c;
+  border-right: 2px solid #c8b48c;
+  z-index: 10;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+    /* content side */
+    .beach-content {
+      padding: 2.5rem 2.5rem;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .beach-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0b2545;
+      border-left: 8px solid #c8b48c;
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .beach-content h2 i {
+      color: #1e8aaa;
+      margin-right: 0.8rem;
+      font-size: 2.2rem;
+    }
+
+    .beach-description {
+      font-size: 1rem;
+      color: #4a5a6a;
+      margin-bottom: 1.6rem;
+      line-height: 1.7;
+    }
+
+    /* feature highlight cards */
+    .activity-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 0.5rem 0 1.2rem;
+    }
+
+    .activity-item {
+      background: #f0f9ff;
+      border-radius: 24px;
+      padding: 0.9rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1 1 160px;
+      border: 1px solid #d1e6f2;
+      transition: transform 0.2s ease;
+    }
+
+    .activity-item:hover {
+      background: #e3f2fa;
+      transform: translateY(-3px);
+    }
+
+    .activity-item i {
+      font-size: 2rem;
+      color: #24819e;
+      min-width: 2rem;
+    }
+
+    .activity-text {
+      font-weight: 600;
+      color: #0b506a;
+    }
+
+    .activity-text small {
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: #3e6e83;
+      display: block;
+    }
+
+    /* meta badges & tags */
+    .beach-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 1rem 0 0.8rem;
+    }
+
+    .badge-beach {
+      background: #e1f0f7;
+      border-radius: 40px;
+      padding: 0.4rem 1.3rem;
+      font-weight: 600;
+      color: #0f5f7e;
+      border: 1px solid #b1d5e8;
+      font-size: 0.95rem;
+    }
+
+    .badge-beach i {
+      margin-right: 0.4rem;
+      color: #24819e;
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      background: white;
+      border-radius: 30px;
+      padding: 0.25rem 1.1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #136381;
+      border: 1px solid #c7dfec;
+    }
+
+    /* CTA button */
+    .btn-beach {
+      background: var(--primary);
+      color: #000;
+      border: 2px solid var(--primary);
+      border-radius: 50px;
+      padding: 0.8rem 2.3rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      transition: 0.25s;
+      width: fit-content;
+      margin-top: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-beach i {
+      color: #000;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-beach:hover {
+      background: transparent;
+      color: #000;
+    }
+
+    .btn-beach:hover i {
+      transform: translateX(5px);
+      color: #c8b48c;
+    }
+
+    /* activities panel */
+    .activities-panel {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 60px;
+      padding: 2rem 2rem;
+      text-align: center;
+      border: 1px solid white;
+      box-shadow: 0 15px 30px -14px #04394e;
+      margin: 3rem 0 1.8rem;
+    }
+
+    .panel-icon {
+      display: inline-block;
+      background: #edf7fc;
+      border-radius: 50px;
+      padding: 0.4rem 1.5rem;
+      margin: 0.3rem 0.5rem;
+      font-weight: 500;
+      color: #0d5977;
+      border: 1px solid #c4deec;
+    }
+
+    .panel-icon i {
+      margin-right: 0.4rem;
+      color: #217a97;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .beach-hero-title {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .beach-hero {
+        padding: 4rem 0;
+        min-height: 400px;
+      }
+
+      .beach-hero-title {
+        font-size: 2.8rem;
+      }
+
+      .beach-hero-text {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+      }
+
+      .float-icon {
+        font-size: 2rem;
+      }
+
+      .beach-content {
+        padding: 2rem 1.5rem;
+      }
+      
+      .beach-content h2 {
+        font-size: 2rem;
+      }
+      
+      .activity-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .beach-hero-title {
+        font-size: 2.2rem;
+      }
+
+      .beach-hero-title .gold-text::before,
+      .beach-hero-title .gold-text::after {
+        font-size: 1.5rem;
+      }
+
+      .beach-hero-subtitle {
+        font-size: 0.8rem;
+        padding: 0.4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- header -->
+
+      <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo - Left -->
+             <a class="navbar-brand" href="index.html">
+                <i class="fas fa-anchor me-2" style="color: var(--primary);"></i>
+                PicnicQo
+            </a>
+
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu - Center (using mx-auto) -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    
+                    <!-- Dropdown - Picnic Places -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item active" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+                             <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown - Games & Activities -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Games & Activities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">contact</a>
+                    </li>
+                </ul>
+
+                <!-- Buttons - Right -->
+                <div class="nav-buttons">
+                  <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#"onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+  <!-- ===== NEW HERO SECTION - EXACT STYLE AS ABOUT PAGE ===== -->
+  <section class="beach-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="beach-hero-content">
+            <!-- Decorative elements -->
+            <div class="hero-decoration">
+              <span class="decoration-line"></span>
+              <span class="decoration-icon"><i class="fas fa-umbrella-beach"></i></span>
+              <span class="decoration-line"></span>
+            </div>
+            
+            <span class="beach-hero-subtitle">✨ Beach Paradise ✨</span>
+
+            
+            <p class="beach-hero-text">
+              Sun, sand, and endless fun. Discover our handpicked coastal paradises 
+              with games and activities for everyone.
+            </p>
+            
+            <!-- Floating icons - beach themed -->
+            <div class="floating-elements">
+              <span class="float-icon">🏖️</span>
+              <span class="float-icon">🌊</span>
+              <span class="float-icon">🏄</span>
+              <span class="float-icon">🐚</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-container" style="max-width: 1360px; margin: 0 auto; padding: 2.5rem 1.5rem;">
+    <!-- Beach Cards - Your existing content -->
+    
+    <!-- Palm Cove -->
+    <div class="row g-0 beach-card align-items-stretch">
+      <div class="col-md-6 beach-image">
+        <img src="./img/palm beach pic.jpg" alt="Palm trees and turquoise water at Palm Cove" class="wave-img">
+      </div>
+      <div class="col-md-6 beach-content">
+        <h2><i class="fas fa-palm-tree"></i> Palm Cove</h2>
+        <p class="beach-description">Golden sands lined with palm trees, gentle waves. Perfect for beach volleyball, sandcastle contests, and family picnics.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-volleyball-ball"></i> <span class="activity-text">Beach volleyball <small>net provided</small></span></div>
+          <div class="activity-item"><i class="fas fa-child"></i> <span class="activity-text">Kids' sand zone <small>digging & castles</small></span></div>
+          <div class="activity-item"><i class="fas fa-fish"></i> <span class="activity-text">Tide pool walk <small>family guided</small></span></div>
+        </div>
+        <div class="beach-meta">
+          <span class="badge-beach"><i class="fa-regular fa-flag"></i> 8+ beach games</span>
+          <div class="tag-group"><span class="tag"><i class="fa-regular fa-clock"></i> 6AM-7PM</span><span class="tag"><i class="fas fa-umbrella-beach"></i> shaded</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-beach"><i class="fas fa-map-pin"></i>Book now</a>
+      </div>
+    </div>
+
+    <!-- Sunset Bay -->
+    <div class="row g-0 beach-card align-items-stretch flex-md-row-reverse">
+      <div class="col-md-6 beach-image">
+        <img src="./img/sunset.jpg" alt="Sunset over sandy beach with rocks at Sunset Bay" class="wave-img">
+      </div>
+      <div class="col-md-6 beach-content">
+        <h2><i class="fas fa-sunset"></i> Sunset Bay</h2>
+        <p class="beach-description">Famous for golden hour views, gentle slope, and shallow waters. Ideal for women's beach yoga, men's beach soccer, and family frisbee.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-person-walking"></i> <span class="activity-text">Sunset yoga <small>women’s group</small></span></div>
+          <div class="activity-item"><i class="fas fa-futbol"></i> <span class="activity-text">Beach soccer <small>men’s 5-a-side</small></span></div>
+          <div class="activity-item"><i class="fas fa-frisbee"></i> <span class="activity-text">Ultimate frisbee <small>family</small></span></div>
+        </div>
+        <div class="beach-meta">
+          <span class="badge-beach"><i class="fa-regular fa-star"></i> 6+ activities</span>
+          <div class="tag-group"><span class="tag"><i class="fas fa-female"></i> women hour</span><span class="tag"><i class="fas fa-male"></i> men's games</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-beach"><i class="fas fa-camera"></i>Book now</a>
+      </div>
+    </div>
+
+    <!-- Coral Beach -->
+    <div class="row g-0 beach-card align-items-stretch">
+      <div class="col-md-6 beach-image">
+        <img src="./img/carol beach pic.jpg" alt="Wide sandy beach with clear water at Coral Beach" class="wave-img">
+      </div>
+      <div class="col-md-6 beach-content">
+        <h2><i class="fas fa-water"></i> Coral Beach</h2>
+        <p class="beach-description">Coral sand, gentle lagoons, and natural shade. Kids' splash area, beach badminton, and guided snorkeling for all ages.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-snorkel"></i> <span class="activity-text">Snorkeling <small>gear rental</small></span></div>
+          <div class="activity-item"><i class="fas fa-badminton"></i> <span class="activity-text">Beach badminton <small>nets up</small></span></div>
+          <div class="activity-item"><i class="fas fa-ring"></i> <span class="activity-text">Floating rings <small>kids' zone</small></span></div>
+        </div>
+        <div class="beach-meta">
+          <span class="badge-beach"><i class="fa-regular fa-sun"></i> shallow lagoon</span>
+          <div class="tag-group"><span class="tag"><i class="fas fa-life-ring"></i> lifeguards</span><span class="tag"><i class="fas fa-umbrella"></i> picnic huts</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-beach"><i class="fas fa-fish"></i>Book now</a>
+      </div>
+    </div>
+
+    <!-- Surfers' Strand -->
+    <div class="row g-0 beach-card align-items-stretch flex-md-row-reverse">
+      <div class="col-md-6 beach-image">
+        <img src="./img/surfers strand pic.jpg" alt="Waves crashing on sandy shore at Surfers' Strand" class="wave-img">
+      </div>
+      <div class="col-md-6 beach-content">
+        <h2><i class="fas fa-water"></i> Surfers' Strand</h2>
+        <p class="beach-description">Lively beach with consistent waves. Perfect for surfing (lessons available), beach paddleboarding, and group games like tug-of-war.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-person-surfing"></i> <span class="activity-text">Surf school <small>boards included</small></span></div>
+          <div class="activity-item"><i class="fas fa-oar"></i> <span class="activity-text">Paddleboarding <small>calm inlet</small></span></div>
+          <div class="activity-item"><i class="fas fa-people-group"></i> <span class="activity-text">Tug-of-war <small>family teams</small></span></div>
+        </div>
+        <div class="beach-meta">
+          <span class="badge-beach"><i class="fa-regular fa-clock"></i> surf season</span>
+          <div class="tag-group"><span class="tag"><i class="fas fa-water"></i> waves 1-2m</span><span class="tag"><i class="fas fa-school"></i> lessons</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-beach"><i class="fas fa-wave-square"></i>Book now</a>
+      </div>
+    </div>
+
+    <!-- Hidden Cove -->
+    <div class="row g-0 beach-card align-items-stretch">
+      <div class="col-md-6 beach-image">
+        <img src="./img/hidden cove pic.webp" alt="Secluded rocky beach with clear water at Hidden Cove" class="wave-img">
+      </div>
+      <div class="col-md-6 beach-content">
+        <h2><i class="fas fa-cave"></i> Hidden Cove</h2>
+        <p class="beach-description">Tranquil cove surrounded by cliffs – offers both beach and nearby indoor recreation hall for table tennis, carrom, and kids' indoor games.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-table-tennis"></i> <span class="activity-text">Indoor TT <small>2 tables</small></span></div>
+          <div class="activity-item"><i class="fas fa-chess-board"></i> <span class="activity-text">Carrom <small>indoor</small></span></div>
+          <div class="activity-item"><i class="fas fa-water"></i> <span class="activity-text">Kayaking <small>cove calm</small></span></div>
+        </div>
+        <div class="beach-meta">
+          <span class="badge-beach"><i class="fa-regular fa-building"></i> indoor + outdoor</span>
+          <div class="tag-group"><span class="tag"><i class="fas fa-child"></i> kids indoor</span><span class="tag"><i class="fas fa-people-roof"></i> family hall</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-beach"><i class="fas fa-binoculars"></i>Book now</a>
+      </div>
+    </div>
+
+    <!-- Turtle Lagoon -->
+    <div class="row g-0 beach-card align-items-stretch flex-md-row-reverse">
+      <div class="col-md-6 beach-image">
+        <img src="./img/turtle lagoon pic.webp" alt="Lagoon with paddle boats and sandy shore at Turtle Lagoon" class="wave-img">
+      </div>
+      <div class="col-md-6 beach-content">
+        <h2><i class="fas fa-turtle"></i> Turtle Lagoon</h2>
+        <p class="beach-description">Protected lagoon, waist-deep for hundreds of meters. Perfect for paddle boats, beach basketball, and women's swim sessions.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-ship"></i> <span class="activity-text">Paddle boats <small>family size</small></span></div>
+          <div class="activity-item"><i class="fas fa-basketball-ball"></i> <span class="activity-text">Beach basketball <small>half court</small></span></div>
+          <div class="activity-item"><i class="fas fa-female"></i> <span class="activity-text">Women's swim <small>mornings</small></span></div>
+        </div>
+        <div class="beach-meta">
+          <span class="badge-beach"><i class="fa-regular fa-clock"></i> calm lagoon</span>
+          <div class="tag-group"><span class="tag"><i class="fas fa-female"></i> women only</span><span class="tag"><i class="fas fa-canoe"></i> boat hire</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-beach"><i class="fas fa-heart"></i>Book now</a>
+      </div>
+    </div>
+
+    <!-- Activities Panel -->
+    <div class="activities-panel">
+      <span class="panel-icon"><i class="fas fa-child"></i> kids sand games</span>
+      <span class="panel-icon"><i class="fas fa-female"></i> women's beach yoga</span>
+      <span class="panel-icon"><i class="fas fa-male"></i> men's beach soccer</span>
+      <span class="panel-icon"><i class="fas fa-people-group"></i> family frisbee</span>
+      <span class="panel-icon"><i class="fas fa-table-tennis"></i> indoor games nearby</span>
+      <span class="panel-icon"><i class="fas fa-tree"></i> outdoor beach volley</span>
+      <span class="panel-icon"><i class="fas fa-sun"></i> sunrise / sunset walks</span>
+      <div class="mt-3 small text-secondary">⭐ every beach has picnic zones, fresh water rinse & first aid</div>
+    </div>
+  </div>
+
+  <!-- Footer (same as before) -->
+  <footer class="picnic-footer-compact">
+    <div class="container footer-content">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-logo-compact">
+            <h4>Picnic<span>Play</span></h4>
+            <p>FUN & GAMES</p>
+          </div>
+          <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; line-height: 1.5; margin-bottom: 1rem;">
+            Outdoor & indoor games for all ages. Create memories with family and friends.
+          </p>
+          <div class="social-icons-compact">
+            <a href="https://www.facebook.com/" class="social-icon-compact" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon-compact" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/" class="social-icon-compact" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/" class="social-icon-compact" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading-compact">Explore</h5>
+          <ul class="footer-links-compact">
+            <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+            <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+            <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading-compact">Game Categories</h5>
+          <div class="games-tags-compact">
+            <span class="game-tag-compact"><i class="fas fa-tree"></i> Outdoor</span>
+            <span class="game-tag-compact"><i class="fas fa-home"></i> Indoor</span>
+            <span class="game-tag-compact"><i class="fas fa-child"></i> Kids</span>
+            <span class="game-tag-compact"><i class="fas fa-female"></i> Women</span>
+            <span class="game-tag-compact"><i class="fas fa-male"></i> Men</span>
+            <span class="game-tag-compact"><i class="fas fa-users"></i> Family</span>
+            <span class="game-tag-compact"><i class="fas fa-chess"></i> Board</span>
+            <span class="game-tag-compact"><i class="fas fa-futbol"></i> Sports</span>
+            <span class="game-tag-compact"><i class="fas fa-dice"></i> Cards</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading-compact">Get in Touch</h5>
+          <ul class="contact-info-compact">
+            <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+            <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+            <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+            <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-compact">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="copyright-compact">© 2024 <a href="#">PicnicPlay</a> | All rights reserved</div>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-links-bottom">
+              <a href="#">Privacy</a>
+              <a href="#">Terms</a>
+              <a href="#">Cookies</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

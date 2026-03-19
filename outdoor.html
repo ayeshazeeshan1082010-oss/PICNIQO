@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outdoor Games · Premium Collection | PicnicPlays</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts - Law Firm Elegance -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f5efe8;
+      color: #2d3e40;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+    }
+
+    /* ===== OUTDOOR HERO SECTION - LAW FIRM ELEGANCE ===== */
+    .outdoor-hero {
+      background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+      padding: 6rem 0;
+      position: relative;
+      color: white;
+      overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .outdoor-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 2;
+    }
+
+    .outdoor-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, rgba(200, 180, 140, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .decoration-line {
+      width: 50px;
+      height: 2px;
+      background: rgba(200, 180, 140, 0.4);
+    }
+
+    .decoration-icon {
+      color: #c8b48c;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .hero-subtitle {
+      color: #c8b48c;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      display: inline-block;
+      background: rgba(200, 180, 140, 0.1);
+      padding: 0.6rem 2rem;
+      border: 1px solid rgba(200, 180, 140, 0.3);
+      margin-bottom: 1.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-title .gold-text {
+      color: #c8b48c;
+      position: relative;
+      font-style: italic;
+    }
+
+    .hero-title .gold-text::before {
+      content: '✦';
+      position: absolute;
+      top: -20px;
+      left: -30px;
+      font-size: 2rem;
+      opacity: 0.6;
+    }
+
+    .hero-title .gold-text::after {
+      content: '✦';
+      position: absolute;
+      bottom: -20px;
+      right: -30px;
+      font-size: 2rem;
+      opacity: 0.6;
+    }
+
+    .hero-description {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 60px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(200, 180, 140, 0.3);
+    }
+
+    .badge-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      background: rgba(200, 180, 140, 0.15);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(200, 180, 140, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-badge i {
+      color: #c8b48c;
+    }
+
+    /* Floating Elements */
+    .floating-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .float-icon {
+      position: absolute;
+      font-size: 2.5rem;
+      opacity: 0.15;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .float-icon:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+    .float-icon:nth-child(2) { top: 70%; right: 15%; animation-delay: 1s; }
+    .float-icon:nth-child(3) { bottom: 25%; left: 20%; animation-delay: 2s; }
+    .float-icon:nth-child(4) { top: 35%; right: 25%; animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    /* ===== GAME CARDS - ELEGANT OUTDOOR THEME ===== */
+    .game-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      box-shadow: 0 20px 40px -12px rgba(11, 37, 69, 0.2);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(200, 180, 140, 0.2);
+    }
+
+    .game-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 50px -15px rgba(11, 37, 69, 0.3);
+      border-color: #c8b48c;
+    }
+
+    /* Image Styles - Wave Shape */
+    .game-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+      box-shadow: 0 20px 25px -8px rgba(200, 113, 75, 0.5);
+      height: 450px;
+      width: 100%;
+      margin: 1.5rem;
+    }
+
+    .game-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+    }
+
+    .game-card:hover .game-image img {
+      transform: scale(1.05);
+    }
+
+    /* Gold Corner Accents */
+    .game-image::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      border-top: 2px solid #c8b48c;
+      border-left: 2px solid #c8b48c;
+      z-index: 10;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .game-image::after {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-bottom: 2px solid #c8b48c;
+      border-right: 2px solid #c8b48c;
+      z-index: 10;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .image-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #c8b48c;
+      color: #0b2545;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 20;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 30px;
+    }
+
+    .game-content {
+      padding: 2.5rem;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .game-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0b2545;
+      margin-bottom: 1rem;
+      border-left: 4px solid #c8b48c;
+      padding-left: 1.2rem;
+    }
+
+    .game-content h2 i {
+      color: #c8b48c;
+      margin-right: 1rem;
+      font-size: 2rem;
+    }
+
+    .game-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .game-tag {
+      background: rgba(200, 180, 140, 0.08);
+      color: #0b2545;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(200, 180, 140, 0.3);
+    }
+
+    .game-tag i {
+      color: #c8b48c;
+    }
+
+    .game-description {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #4a5a6a;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .feature-item i {
+      font-size: 1.2rem;
+      color: #c8b48c;
+    }
+
+    .feature-item span {
+      font-size: 0.9rem;
+      color: #4a5a6a;
+      font-weight: 500;
+    }
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+      border-radius: 20px;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+      background-size: 30px 30px;
+      opacity: 0.2;
+    }
+
+    .cta-content {
+      text-align: center;
+      color: white;
+      position: relative;
+      z-index: 10;
+    }
+
+    .cta-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .cta-content h2 i {
+      color: #c8b48c;
+      margin: 0 0.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-btn {
+      background: #c8b48c;
+      color: #0b2545;
+      border: none;
+      border-radius: 50px;
+      padding: 1rem 3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid #c8b48c;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      background: transparent;
+      color: #c8b48c;
+    }
+
+    /* ===== FOOTER ===== */
+    .picnic-footer-compact {
+      background: #0a1f2e;
+      color: #fff;
+      position: relative;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-logo-compact h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #c8b48c;
+    }
+
+    .footer-logo-compact p {
+      color: rgba(200, 180, 140, 0.7);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .footer-heading-compact {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1.2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-heading-compact::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: #c8b48c;
+    }
+
+    .footer-links-compact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links-compact li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links-compact a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links-compact a:hover {
+      color: #c8b48c;
+      transform: translateX(5px);
+    }
+
+    .footer-links-compact a i {
+      margin-right: 5px;
+      color: #c8b48c;
+    }
+
+    .games-tags-compact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .game-tag-compact {
+      background: rgba(200, 180, 140, 0.1);
+      border: 1px solid rgba(200, 180, 140, 0.2);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.7rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .game-tag-compact:hover {
+      background: #c8b48c;
+      color: #0a1f2e;
+    }
+
+    .contact-info-compact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-info-compact li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.8rem;
+    }
+
+    .contact-info-compact li i {
+      color: #c8b48c;
+      width: 18px;
+    }
+
+    .social-icons-compact {
+      display: flex;
+      gap: 0.8rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .social-icon-compact {
+      width: 32px;
+      height: 32px;
+      background: rgba(200, 180, 140, 0.1);
+      border: 1px solid rgba(200, 180, 140, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c8b48c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon-compact:hover {
+      background: #c8b48c;
+      color: #0a1f2e;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom-compact {
+      border-top: 1px solid rgba(200, 180, 140, 0.15);
+      padding: 1rem 0;
+    }
+
+    .copyright-compact {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+    }
+
+    .copyright-compact a {
+      color: #c8b48c;
+      text-decoration: none;
+    }
+
+    .footer-links-bottom {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: flex-end;
+    }
+
+    .footer-links-bottom a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+
+    .footer-links-bottom a:hover {
+      color: #c8b48c;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      .game-image {
+        height: 350px;
+        margin: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      
+      .hero-title .gold-text::before,
+      .hero-title .gold-text::after {
+        font-size: 1.5rem;
+      }
+      
+      .hero-description {
+        font-size: 1rem;
+      }
+      
+      .game-content {
+        padding: 2rem;
+      }
+      
+      .game-content h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 2.2rem;
+      }
+      
+      .game-image {
+        height: 300px;
+        margin: 0.5rem;
+      }
+      
+      .footer-links-bottom {
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .hero-badge {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+      }
+      
+      .game-image {
+        height: 250px;
+        margin: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-anchor me-2" style="color: var(--primary);"></i>
+        PicnicQo
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">destinations</a>
+            <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+              <li><a class="dropdown-item" href="beach.html">beach</a></li>
+              <li><a class="dropdown-item" href="parks.html">parks</a></li>
+              <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+              <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+              <li><a class="dropdown-item" href="desert.html">desert</a></li>
+              <li><a class="dropdown-item" href="island.html">island</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Games & Activities</a>
+            <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+              <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+              <li><a class="dropdown-item active" href="outdoor.html">outdoor games</a></li>
+              <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+              <li><a class="dropdown-item" href="women.html">women games</a></li>
+              <li><a class="dropdown-item" href="men.html">men games</a></li>
+              <li><a class="dropdown-item" href="family.html">family games</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+          <a class="nav-link btn-consultation" href="#" onclick="openRegisterPopup()">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Outdoor Hero Section - Law Firm Elegance -->
+  <section class="outdoor-hero">
+    <div class="floating-elements">
+      <span class="float-icon">🌳</span>
+      <span class="float-icon">🌲</span>
+      <span class="float-icon">🏏</span>
+      <span class="float-icon">⚽</span>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-decoration">
+          <span class="decoration-line"></span>
+          <span class="decoration-icon"><i class="fas fa-tree"></i></span>
+          <span class="decoration-line"></span>
+        </div>
+        
+        <div class="hero-subtitle">
+          ✨ OUTDOOR COLLECTION ✨
+        </div>
+        
+        <h1 class="hero-title">
+          Outdoor <span class="gold-text">Games</span>
+        </h1>
+        
+        <p class="hero-description">
+          Discover exciting games and activities for open-air fun
+        </p>
+        
+        <div class="badge-container">
+          <span class="hero-badge"><i class="fas fa-tree"></i> Park</span>
+          <span class="hero-badge"><i class="fas fa-mountain"></i> Field</span>
+          <span class="hero-badge"><i class="fas fa-sun"></i> Lawn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+
+    <!-- Game 1: volleyball(Image Left, Content Right) -->
+    <div class="row game-card align-items-stretch g-0">
+      <div class="col-md-6">
+        <div class="game-image">
+          <img src="./outdoor-games-img/Beach volleyball.jpg" alt="Beach Volleyball">
+          <span class="image-badge">VOLLEYBALL</span>
+        </div>
+      </div>
+      <div class="col-md-6 game-content">
+        <h2><i class="fas fa-baseball-ball"></i> Beach Volleyball</h2>
+        <div class="game-tags">
+          <span class="game-tag"><i class="fas fa-users"></i>6-12Players</span>
+          <span class="game-tag"><i class="fas fa-clock"></i> 1-2Hours</span>
+          <span class="game-tag"><i class="fas fa-trophy"></i> Competitive</span>
+        </div>
+        <p class="game-description">
+         Beach Volleyball ek energetic team sport hai jo sunset beach setting mein aur bhi exciting lagta hai. Is game mein do teams net ke across compete karti hain aur goal hota hai ball ko opponent court mein land karwana. Ye game teamwork, coordination aur stamina ko boost karta hai. Large family gatherings aur group picnics ke liye Beach Volleyball perfect activity hai jo sab ko active aur engaged rakhti hai.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <i class="fas fa-heart"></i>
+            <span>Team spirit</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-smile"></i>
+            <span>Fun for all</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game 2: mini golf (Image Right, Content Left) -->
+    <div class="row game-card align-items-stretch g-0 flex-md-row-reverse">
+      <div class="col-md-6">
+        <div class="game-image">
+          <img src="./outdoor-games-img/Mini golf.jpg" alt="Mini Golf">
+          <span class="image-badge">MINI GOLF</span>
+        </div>
+      </div>
+      <div class="col-md-6 game-content">
+        <h2><i class="fas fa-futbol"></i> Mini Golf</h2>
+        <div class="game-tags">
+          <span class="game-tag"><i class="fas fa-users"></i>2-6 Players</span>
+          <span class="game-tag"><i class="fas fa-clock"></i>45-90 Mins</span>
+          <span class="game-tag"><i class="fas fa-bolt"></i>fun and skill base</span>
+        </div>
+        <p class="game-description">
+        .Mini Golf ek relaxing lekin engaging outdoor activity hai jo har age group enjoy kar sakta hai. Is game mein players ko creative obstacles ke through ball ko hole mein dalna hota hai minimum strokes mein. Evening picnic ya family outing ke liye Mini Golf perfect hai kyunki ye friendly competition ke saath fun atmosphere create karta hai. Ye game patience aur focus improve karta hai.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <i class="fas fa-heart"></i>
+            <span>Teamwork</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-smile"></i>
+            <span>Fast-paced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game 3: spikeball (Image Left, Content Right) -->
+    <div class="row game-card align-items-stretch g-0">
+      <div class="col-md-6">
+        <div class="game-image">
+          <img src="./outdoor-games-img/spikeball on the beach.jpg" alt="Spikeball on the Beach">
+          <span class="image-badge">SPIKEBALL</span>
+        </div>
+      </div>
+      <div class="col-md-6 game-content">
+        <h2><i class="fas fa-table-tennis"></i> Spikeball</h2>
+        <div class="game-tags">
+          <span class="game-tag"><i class="fas fa-users"></i> 2-4 Players</span>
+          <span class="game-tag"><i class="fas fa-clock"></i> 30-60 Mins</span>
+          <span class="game-tag"><i class="fas fa-bolt"></i> Quick Reflexes</span>
+        </div>
+        <p class="game-description">
+          Spikeball ek fast-paced beach game hai jo speed aur reflexes ko test karta hai. Is game mein do teams hoti hain aur goal hota hai ball ko net par bounce karna taake dusri team return na kar sake. Ye game picnic aur beach gatherings ke liye perfect hai kyunki ye excitement, teamwork aur healthy competition create karta hai. Short time mein maximum fun ke liye Spikeball best choice hai.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <i class="fas fa-heart"></i>
+            <span>Improves reflexes</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-smile"></i>
+            <span>Fun for all</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game 4: tennis (Image Right, Content Left) -->
+    <div class="row game-card align-items-stretch g-0 flex-md-row-reverse">
+      <div class="col-md-6">
+        <div class="game-image">
+          <img src="./outdoor-games-img/tennis.jpg" alt="Tennis Game">
+          <span class="image-badge">TENNIS</span>
+        </div>
+      </div>
+      <div class="col-md-6 game-content">
+        <h2><i class="fas fa-volleyball-ball"></i> Tennis</h2>
+        <div class="game-tags">
+          <span class="game-tag"><i class="fas fa-users"></i> 2-4 Players</span>
+          <span class="game-tag"><i class="fas fa-clock"></i>60-120Mins</span>
+          <span class="game-tag"><i class="fas fa-bolt"></i> skill and competitive</span>
+        </div>
+        <p class="game-description">
+          Tennis ek classic outdoor sport hai jo skill, focus aur stamina ka perfect combination hai. Is game mein players net ke across compete karte hain aur goal hota hai ball ko opponent court mein is tarah place karna ke woh return na kar sake. Ye game coordination, speed aur strategic thinking improve karta hai. Family gatherings aur friendly matches ke liye Tennis ek energetic aur classy choice hai jo healthy competition create karta hai.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <i class="fas fa-heart"></i>
+            <span>Team bonding</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-smile"></i>
+            <span>Active fun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game 5: Trampoline (Image Left, Content Right) -->
+    <div class="row game-card align-items-stretch g-0">
+      <div class="col-md-6">
+        <div class="game-image">
+          <img src="./kids-games-img/trampoline.jfif" alt="Trampoline Fun">
+          <span class="image-badge">TRAMPOLINE</span>
+        </div>
+      </div>
+      <div class="col-md-6 game-content">
+        <h2><i class="fas fa-bounce"></i> Trampoline</h2>
+        <div class="game-tags">
+          <span class="game-tag"><i class="fas fa-users"></i> 1-3 Players</span>
+          <span class="game-tag"><i class="fas fa-clock"></i> 30-60 Mins</span>
+          <span class="game-tag"><i class="fas fa-bolt"></i> fun and fitness</span>
+        </div>
+        <p class="game-description">
+         Trampoline ek super fun activity hai jo especially kids aur families ke liye perfect hoti hai. Is activity mein jumping aur light acrobat moves ke through excitement aur laughter create hota hai. Ye balance, coordination aur body control improve karta hai. Picnic ya backyard setup mein Trampoline energy boost karta hai aur sab ko active aur happy rakhta hai.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <i class="fas fa-heart"></i>
+            <span>Cardio workout</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-smile"></i>
+            <span>Fun & active</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2><i class="fas fa-tree"></i> Outdoor Fun <i class="fas fa-tree"></i></h2>
+          <p>Ready for some outdoor adventure? Book your favorite game today!</p>
+          <button class="cta-btn" onclick="alert('Thank you for your interest!')">
+            Submit your Games
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+        <!-- footer -->
+    <footer class="picnic-footer-compact">
+      <div class="container footer-content">
+        <div class="row g-4">
+          <!-- Col 1: Logo + Social (Small) -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-compact">
+              <h4>Picnic<span>Play</span></h4>
+              <p>FUN & GAMES</p>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+              "
+            >
+              Outdoor & indoor games for all ages. Create memories with family
+              and friends.
+            </p>
+            <div class="social-icons-compact">
+              <a href="https://www.facebook.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links (Compact) -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading-compact">Explore</h5>
+            <ul class="footer-links-compact">
+              <li>
+                <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
+              </li>
+               <li>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a>
+              </li>
+                <a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Game Tags (Compact) -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading-compact">Game Categories</h5>
+            <div class="games-tags-compact">
+              <span class="game-tag-compact"
+                ><i class="fas fa-tree"></i> Outdoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-home"></i> Indoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-child"></i> Kids</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-female"></i> Women</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-male"></i> Men</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-users"></i> Family</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-chess"></i> Board</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-futbol"></i> Sports</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-dice"></i> Cards</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Contact (Compact) -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading-compact">Get in Touch</h5>
+            <ul class="contact-info-compact">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+              <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+              <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Very Compact) -->
+      <div class="footer-bottom-compact">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-compact">
+                © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links-bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

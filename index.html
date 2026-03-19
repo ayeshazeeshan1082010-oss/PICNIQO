@@ -1,0 +1,1424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Molle:ital@1&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playwrite+MX+Guides&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <title>picnic games</title>
+  </head>
+  <body>
+
+   <!-- header -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo - Left -->
+            <a class="navbar-brand" href="index.html">PICNIQO</a>
+
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu - Center (using mx-auto) -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    
+                    <!-- Dropdown - Picnic Places -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="picnic-places.html" id="placesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            picnic-places
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+                            <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown - Games & Activities -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Games & Activities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">contact</a>
+                    </li>
+                </ul>
+
+                <!-- Buttons - Right -->
+                <div class="nav-buttons">
+                    <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#" onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Hero Content -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Left Column - Content -->
+                <div class="col-lg-6">
+                    <div class="hero-content-left">
+                        <!-- Subtitle -->
+                        <span class="hero-subtitle">FUN & MEMORABLE PICNICS</span>
+                        
+                        <!-- Title -->
+                        <h1 class="hero-title">
+                            Joyful Days
+                            <span>Adventure Awaits</span>
+                        </h1>
+                        
+                        <!-- Description -->
+                        <p class="hero-description">
+                            Discover the best picnic spots, exciting games, and
+                            family-friendly activities! From scenic parks to thrilling
+                            waterparks, we guide you to make every outing unforgettable. Plan,
+                            play, and enjoy quality time with your loved ones.
+                        </p>
+
+                        <!-- Buttons -->
+                        <div class="btn-group-custom">
+                            <a href="#booking" class="btn-primary-custom">Plan Your Picnic</a>
+                            <a href="about.html" class="btn-outline-custom">View Details</a>
+                        </div>
+
+                        <!-- Stats - Bootstrap Grid -->
+                        <div class="row stats-row g-4">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <span class="stat-number">150+</span>
+                                    <span class="stat-laabels">Picnic Spots</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <span class="stat-number">2000+</span>
+                                    <span class="stat-laabels">Happy Families</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-laabels">Fun Activities</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Image -->
+                <div class="col-lg-6">
+                    <div class="hero-image-wrapper">
+                        <img src="./img/hero.jpg" 
+                             alt="hero-img" 
+                             class="hero-image img-fluid">
+
+                        <div class="experience-badge">
+                            <h4>20+ Years</h4>
+                            <p>Creating Memorable Picnics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- card section  -->
+<section class="card-section">
+    <div class="container">
+        <!-- Section Title Row -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h2>Curated Picnic Experiences</h2>
+                    <p class="card-para">Luxury setups designed for unforgettable moments ✨</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Cards in a Single Row Group -->
+        <div class="row g-4">
+            <!-- Outdoor Games -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="image-item blue">
+                    <img src="./img/outdoor.jpg" alt="Outdoor Games">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-volleyball"></i>
+                        </div>
+                        <h3>Outdoor Games</h3>
+                        <p>Exciting lawn activities and interactive games for a lively and joyful picnic experience.</p>
+                        <a href="outdoor.html" class="btn-hover" onclick="event.stopPropagation();">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indoor Games -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="image-item blue">
+                    <img src="./img/indoor.jpg" alt="Indoor Games">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-chess-queen"></i>
+                        </div>
+                        <h3>Indoor Games</h3>
+                        <p>Fun board games and cozy entertainment options for a relaxed indoor gathering.</p>
+                        <a href="indoor.html" class="btn-hover" onclick="event.stopPropagation();">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kids Games -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="image-item blue">
+                    <img src="./img/kids.jpg" alt="Kids Games">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <h3>Kids Games</h3>
+                        <p>Colorful setups with engaging games specially designed for little guests.</p>
+                        <a href="kids.html" class="btn-hover" onclick="event.stopPropagation();">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women Games -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="image-item blue">
+                    <img src="./img/women.jpg" alt="Women Games">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-person-dress"></i>
+                        </div>
+                        <h3>Women Games</h3>
+                        <p>A stylish picnic setup perfect for brunches, celebrations and special moments.</p>
+                        <a href="women.html" class="btn-hover" onclick="event.stopPropagation();">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Men Games -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="image-item blue">
+                    <img src="./img/men.jpg" alt="Men Games">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-person"></i>
+                        </div>
+                        <h3>Men Games</h3>
+                        <p>Relaxed outdoor arrangements with games and premium refreshments.</p>
+                        <a href="men.html" class="btn-hover" onclick="event.stopPropagation();">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Games -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="image-item blue">
+                    <img src="./img/family.jpg" alt="Family Games">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3>Family Games</h3>
+                        <p>A complete picnic experience filled with fun, bonding and unforgettable memories.</p>
+                        <a href="family.html" class="btn-hover" onclick="event.stopPropagation();">Explore Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- about section -->
+
+    <section class="about-section">
+      <div class="container">
+        <!-- Section Header Row -->
+        <div class="row">
+          <div class="col-12">
+            <div class="section-header">
+              <div class="section-tag">OUR LEGACY</div>
+              <h2 class="section-heading">
+                Crafting<span>Moments</span>That Matter
+              </h2>
+              <div class="divider">
+                <span class="divider-line"></span>
+                <span class="divider-icon"
+                  ><i class="fas fa-asterisk"></i
+                ></span>
+                <span class="divider-line"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Row -->
+        <div class="row align-items-center g-5">
+          <!-- Left Column -->
+          <div class="col-lg-6">
+            <div class="left-col">
+
+
+              <!-- Title -->
+              <h3 class="about-title">
+                Elevating Outdoor
+                <span class="gold-highlight">Recreation</span>With Precision &
+                Care
+              </h3>
+
+              <!-- Description -->
+              <p class="about-text">
+                Since 2015, PicnicPlay has redefined outdoor entertainment. We
+                approach every event with the meticulous attention of a legal
+                strategy and the warmth of a family gathering. Our curated
+                experiences transform simple picnics into extraordinary memories
+                that last a lifetime.
+              </p>
+
+              <!-- Features Row -->
+              <div class="row features-row">
+                <div class="col-md-6 feature-col">
+                  <div class="feature-box">
+                    <div class="feature-icon-box">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h5>10,000+ Families</h5>
+                      <p>Trusted nationwide</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 feature-col">
+                  <div class="feature-box">
+                    <div class="feature-icon-box">
+                      <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h5>50+ Games</h5>
+                      <p>Traditional & modern</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 feature-col">
+                  <div class="feature-box">
+                    <div class="feature-icon-box">
+                      <i class="fas fa-award"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h5>Award-Winning</h5>
+                      <p>Best Picnic 2023</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 feature-col">
+                  <div class="feature-box">
+                    <div class="feature-icon-box">
+                      <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-text">
+                      <h5>24/7 Support</h5>
+                      <p>Always available</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats Row -->
+              <div class="row stats-row">
+                <div class="col-4 stat-col">
+                  <div class="stat-number">500+</div>
+                  <div class="stat-label">EVENTS</div>
+                </div>
+                <div class="col-4 stat-col">
+                  <div class="stat-number">4.9</div>
+                  <div class="stat-label">RATING</div>
+                </div>
+                <div class="col-4 stat-col">
+                  <div class="stat-number">15+</div>
+                  <div class="stat-label">LOCATIONS</div>
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <a href="about.html" class="btn-about">
+                DISCOVER OUR STORY
+                <i class="fas fa-arrow-right"></i>
+              </a>
+<div class="signature">
+  <span class="signature-text">— The PicnicPlay Team</span>
+</div>
+        
+            </div>
+          </div>
+
+          <!-- Right Column - Fixed Badges -->
+          <div class="col-lg-6">
+            <div class="right-col">
+              <div class="image-container">
+                <!-- Main Image -->
+                <div class="image-main">
+                  <img
+                    src="./img/about.jpg"
+                    alt="Picnic Experience"
+                    class="img-fluid"
+                  />
+
+                  <!-- Gold Corners -->
+                  <div class="corner-top-left"></div>
+                  <div class="corner-bottom-right"></div>
+                </div>
+
+                <!-- Experience Badge - Bottom Left -->
+                <div class="exp-badge">
+                  <h3>8+ Years</h3>
+                  <p>Of Excellence</p>
+                </div>
+
+                <!-- Floating Card - Top Right -->
+                <div class="float-card">
+                  <i class="fas fa-smile"></i>
+                  <h6>10k+ Happy</h6>
+                  <p>Families served</p>
+                </div>
+
+                <!-- Image Collage - Bottom Right -->
+                <div class="collage-wrapper">
+                  <div class="collage-row">
+                    <img
+                      src="./img/about-collage-1.jpg"
+                      alt="Kids"
+                      class="collage-img"
+                    />
+                    <img
+                      src="./img/about-collage-2.jpg"
+                      alt="Couple"
+                      class="collage-img"
+                    />
+                    <img
+                      src="./img/about-collage-3.jpg"
+                      alt="Group"
+                      class="collage-img"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+            <!-- Games Collection Section -->
+            <section class="games-section">
+                <div class="container">
+                    <!-- Section Header - Bootstrap Grid Row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-header">
+                                <div class="section-tag">CURATED COLLECTION</div>
+                                <h2 class="section-heading">Popular <span>Games</span></h2>
+                                <div class="section-divider">
+                                    <span class="divider-line"></span>
+                                    <span class="divider-icon"><i class="fas fa-asterisk"></i></span>
+                                    <span class="divider-line"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Owl Carousel - Bootstrap Grid Row -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="owl-carousel owl-theme" id="gamesCarousel">
+                                <!-- Card 1 - Cricket -->
+                                <div class="game-card">
+                                    <div class="game-image">
+                                        <img src="./games-img/cricket.jpg" alt="Cricket">
+                                        <span class="game-category">OUTDOOR</span>
+                                    </div>
+                                    <div class="game-content">
+                                        <h3 class="game-title">Cricket</h3>
+                                        <p class="game-desc">
+                                            Classic gentleman's game perfect for family gatherings and
+                                            friendly competitions.
+                                        </p>
+                                        <div class="game-meta">
+                                            <div class="game-players">
+                                                <i class="fas fa-users"></i>
+                                                <span>6-12 Players</span>
+                                            </div>
+                                            <div class="difficulty">
+                                                <span class="active"></span>
+                                                <span class="active"></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Card 2 - Badminton -->
+                                <div class="game-card">
+                                    <div class="game-image">
+                                        <img src="./games-img/badminton.jpg" alt="Badminton">
+                                        <span class="game-category">OUTDOOR</span>
+                                    </div>
+                                    <div class="game-content">
+                                        <h3 class="game-title">Badminton</h3>
+                                        <p class="game-desc">
+                                            Fast-paced racquet sport that brings energy and excitement to
+                                            any picnic.
+                                        </p>
+                                        <div class="game-meta">
+                                            <div class="game-players">
+                                                <i class="fas fa-users"></i>
+                                                <span>2-4 Players</span>
+                                            </div>
+                                            <div class="difficulty">
+                                                <span class="active"></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Card 3 - Chess -->
+                                <div class="game-card">
+                                    <div class="game-image">
+                                        <img src="./games-img/chess.jpg" alt="Chess">
+                                        <span class="game-category">INDOOR</span>
+                                    </div>
+                                    <div class="game-content">
+                                        <h3 class="game-title">Chess</h3>
+                                        <p class="game-desc">
+                                            Strategic board game that challenges the mind and brings
+                                            generations together.
+                                        </p>
+                                        <div class="game-meta">
+                                            <div class="game-players">
+                                                <i class="fas fa-user"></i>
+                                                <span>2 Players</span>
+                                            </div>
+                                            <div class="difficulty">
+                                                <span class="active"></span>
+                                                <span class="active"></span>
+                                                <span class="active"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Card 4 - Tag & Chase -->
+                                <div class="game-card">
+                                    <div class="game-image">
+                                        <img src="./games-img/tag-chase.jpg" alt="Tag Game">
+                                        <span class="game-category">KIDS</span>
+                                    </div>
+                                    <div class="game-content">
+                                        <h3 class="game-title">Tag & Chase</h3>
+                                        <p class="game-desc">
+                                            Classic childhood game that brings endless laughter and energy.
+                                        </p>
+                                        <div class="game-meta">
+                                            <div class="game-players">
+                                                <i class="fas fa-users"></i>
+                                                <span>4+ Players</span>
+                                            </div>
+                                            <div class="difficulty">
+                                                <span class="active"></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Card 5 - Carrom -->
+                                <div class="game-card">
+                                    <div class="game-image">
+                                        <img src="./games-img/carrom.jpg" alt="Carrom">
+                                        <span class="game-category">INDOOR</span>
+                                    </div>
+                                    <div class="game-content">
+                                        <h3 class="game-title">Carrom</h3>
+                                        <p class="game-desc">
+                                            Popular family board game that combines skill and precision.
+                                        </p>
+                                        <div class="game-meta">
+                                            <div class="game-players">
+                                                <i class="fas fa-users"></i>
+                                                <span>2-4 Players</span>
+                                            </div>
+                                            <div class="difficulty">
+                                                <span class="active"></span>
+                                                <span class="active"></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Card 6 - Volleyball -->
+                                <div class="game-card">
+                                    <div class="game-image">
+                                        <img src="./games-img/volley ball.jpg" alt="Volleyball">
+                                        <span class="game-category">OUTDOOR</span>
+                                    </div>
+                                    <div class="game-content">
+                                        <h3 class="game-title">Volleyball</h3>
+                                        <p class="game-desc">
+                                            Team sport that builds camaraderie and excitement on the beach.
+                                        </p>
+                                        <div class="game-meta">
+                                            <div class="game-players">
+                                                <i class="fas fa-users"></i>
+                                                <span>6-12 Players</span>
+                                            </div>
+                                            <div class="difficulty">
+                                                <span class="active"></span>
+                                                <span class="active"></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Card 7 - Basketball -->
+                                <div class="game-card">
+                                    <div class="game-image">
+                                        <img src="./games-img/basketball.jpg" alt="Basketball">
+                                        <span class="game-category">OUTDOOR</span>
+                                    </div>
+                                    <div class="game-content">
+                                        <h3 class="game-title">Basketball</h3>
+                                        <p class="game-desc">
+                                            Fast-paced team sport perfect for groups and family fun on the court.
+                                        </p>
+                                        <div class="game-meta">
+                                            <div class="game-players">
+                                                <i class="fas fa-users"></i>
+                                                <span>5-10 Players</span>
+                                            </div>
+                                            <div class="difficulty">
+                                                <span class="active"></span>
+                                                <span class="active"></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+
+
+
+
+
+
+
+    
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5">
+        <div class="container">
+                <!-- Section Header -->
+           <div class="row">
+            <div class="col-12">
+               <div class="section-header">
+                <div class="section-tag">CLIENT TESTIMONIALS</div>
+                <h2 class="section-heading">
+                    What <span>Families</span> Say
+                </h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-asterisk"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+              </div>
+            </div>
+              </div>
+           
+
+            <!-- Testimonials Carousel -->
+             <div class="row">
+              <div class="col-12">
+           
+            <div class="owl-carousel owl-theme" id="testimonialsCarousel">
+                
+                <!-- Testimonial 1 - Family -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "PicnicPlay transformed our family gathering into an unforgettable experience. The games were well-organized, and the staff was incredibly professional. My kids are still talking about it!"
+                    </p>
+                    <div class="client-inffo">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                        </div>
+                        <div class="client-details">
+                            <h4 class="client-name">Priya Sharma</h4>
+                            <div class="client-designation">Mother of Two</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 - Corporate -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "We hired PicnicPlay for our annual company picnic. Their attention to detail and variety of games impressed everyone. The team building activities were perfectly curated."
+                    </p>
+                    <div class="client-inffo">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Mehta">
+                        </div>
+                        <div class="client-details">
+                            <h4 class="client-name">Rahul Mehta</h4>
+                            <div class="client-designation">HR Manager, TechCorp</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 - Kids Party -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "My daughter's 8th birthday was a huge success thanks to PicnicPlay. The kids' games section was amazing, and the coordinators were wonderful with the children."
+                    </p>
+                    <div class="client-inffo">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anjali Kapoor">
+                        </div>
+                        <div class="client-details">
+                            <h4 class="client-name">Anjali Kapoor</h4>
+                            <div class="client-designation">Event Planner</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 - Couple -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "We booked a romantic picnic setup for our anniversary. It was absolutely perfect - from the arrangement to the games they suggested. Very professional and thoughtful."
+                    </p>
+                    <div class="client-inffo">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Neha Gupta">
+                        </div>
+                        <div class="client-details">
+                            <h4 class="client-name">Neha & Vikram</h4>
+                            <div class="client-designation">Anniversary Celebration</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 - Senior Citizens -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Our senior citizens group had a wonderful time. They arranged games suitable for everyone, and the care they showed was exceptional. Highly recommended!"
+                    </p>
+                    <div class="client-inffo">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Suresh Patel">
+                        </div>
+                        <div class="client-details">
+                            <h4 class="client-name">Suresh Patel</h4>
+                            <div class="client-designation">Golden Age Club</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star faded"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 - School Group -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Our school picnic was a tremendous success. The educational games they incorporated were brilliant. The children learned while having fun. Thank you, PicnicPlay!"
+                    </p>
+                    <div class="client-inffo">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Meera Reddy">
+                        </div>
+                        <div class="client-details">
+                            <h4 class="client-name">Anjali Kapoor</h4>
+                            <div class="client-designation">School Teacher</div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+    <!--  Book Now Section -->
+    <section class="cta-section" id="booking">
+        <div class="container">
+            <!-- Main Row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <!-- Main CTA Box -->
+                    <div class="cta-box bg-dark text-light">
+                        <!-- Gold Bar -->
+                        <div class="cta-gold-bar"></div>
+                        
+                        <!-- Guarantee Badge -->
+                        <div class="guarantee-badge">
+                            <p><i class="fas fa-shield-alt me-2"></i>100% SATISFACTION</p>
+                        </div>
+
+                        <!-- CTA Content -->
+                        <div class="cta-content">
+                            <!-- Tag -->
+                            <div class="cta-tag">
+                                LIMITED SLOTS AVAILABLE
+                            </div>
+
+                            <!-- Heading -->
+                            <h2 class="cta-heading">
+                                Ready for <span>Unforgettable</span> Fun?
+                            </h2>
+
+                            <!-- Description -->
+                            <p class="cta-description">
+                                Book your picnic experience today and create lasting memories with your loved ones. 
+                                Professional setup, curated games, and exceptional service guaranteed.
+                            </p>
+
+                            <!-- Booking Form - Bootstrap Grid Row -->
+                            <div class="row g-3 booking-form">
+                                <div class="col-md-5">
+                                    <div class="date-input-wrapper">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <input type="date" class="date-input" id="bookingDate" min="2024-01-01" max="2024-12-31">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="select-wrapper">
+                                        <i class="fas fa-users"></i>
+                                        <select class="people-select" id="peopleCount">
+                                            <option value="" disabled selected>Select Group Size</option>
+                                            <option value="2-4">2-4 People (Small Group)</option>
+                                            <option value="5-8">5-8 People (Family)</option>
+                                            <option value="9-15">9-15 People (Large Group)</option>
+                                            <option value="16+">16+ People (Corporate)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button class="book-btn">
+                                        BOOK NOW
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Contact Info - Bootstrap Grid Row -->
+                            <div class="row cta-contact">
+                                <div class="col-md-4">
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone-alt"></i>
+                                        <span><a href="tel:+919876543210">+91 98765 43210</a></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span><a href="mailto:book@picnicplay.com">book@picnicplay.com</a></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="contact-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>9:00 AM - 8:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trust Badges - Bootstrap Grid Row -->
+                            <div class="row trust-badges g-4">
+                                <div class="col-md-3 col-6">
+                                    <div class="trust-badge">
+                                        <i class="fas fa-lock"></i>
+                                        <span>SECURE BOOKING</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="trust-badge">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>PAY AT EVENT</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="trust-badge">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <span>FREE CANCELLATION</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="trust-badge">
+                                        <i class="fas fa-clock"></i>
+                                        <span>24/7 SUPPORT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+        <!-- footer -->
+    <footer class="picnic-footer-compact">
+      <div class="container footer-content">
+        <div class="row g-4">
+          <!-- Col 1: Logo + Social (Small) -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-compact">
+              <h4>Picnic<span>Play</span></h4>
+              <p>FUN & GAMES</p>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+              "
+            >
+              Outdoor & indoor games for all ages. Create memories with family
+              and friends.
+            </p>
+            <div class="social-icons-compact">
+              <a href="https://www.facebook.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links (Compact) -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading-compact">Explore</h5>
+            <ul class="footer-links-compact">
+              <li>
+                <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
+              </li>
+               <li>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a>
+              </li>
+                <a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Game Tags (Compact) -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading-compact">Game Categories</h5>
+            <div class="games-tags-compact">
+              <span class="game-tag-compact"
+                ><i class="fas fa-tree"></i> Outdoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-home"></i> Indoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-child"></i> Kids</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-female"></i> Women</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-male"></i> Men</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-users"></i> Family</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-chess"></i> Board</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-futbol"></i> Sports</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-dice"></i> Cards</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Contact (Compact) -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading-compact">Get in Touch</h5>
+            <ul class="contact-info-compact">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+              <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+              <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Very Compact) -->
+      <div class="footer-bottom-compact">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-compact">
+                © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links-bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

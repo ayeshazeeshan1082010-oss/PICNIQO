@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Island Paradise - Luxury Island Retreats</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - New & Brilliant Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--light);
+            color: #164863;
+        }
+
+        /* ===== ISLAND PARADISE PAGE ===== */
+        .island-page {
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .island-header {
+            background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+            padding: 7rem 0 9rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .island-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+
+        .island-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to top, #bae6fd, transparent);
+            z-index: 2;
+        }
+
+        .ocean-waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.2" d="M0,192L48,176C96,160,192,128,288,128C384,128,480,160,576,186.7C672,213,768,235,864,224C960,213,1056,171,1152,149.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            z-index: 3;
+        }
+
+        .island-floating {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .island-float-item {
+            position: absolute;
+            color: rgba(200, 180, 140, 0.15);
+            font-size: 3.5rem;
+            animation: islandFloat 15s infinite ease-in-out;
+        }
+
+        .island-float-item:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .island-float-item:nth-child(2) { top: 70%; right: 15%; animation-delay: 3s; }
+        .island-float-item:nth-child(3) { bottom: 25%; left: 20%; animation-delay: 6s; }
+        .island-float-item:nth-child(4) { top: 40%; right: 25%; animation-delay: 9s; }
+        .island-float-item:nth-child(5) { bottom: 30%; right: 35%; animation-delay: 12s; }
+
+        @keyframes islandFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(5deg); }
+        }
+
+        .island-header-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .island-header-tag {
+            color: #c8b48c;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            display: inline-block;
+            background: rgba(200, 180, 140, 0.1);
+            padding: 0.7rem 2.5rem;
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            margin-bottom: 2rem;
+            border-radius: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .island-main-title {
+            font-family: 'Prata', serif;
+            font-size: 5.5rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+        }
+
+        .island-main-title .coral {
+            color: #c8b48c;
+            font-style: italic;
+            position: relative;
+        }
+
+        .island-main-title .coral::before {
+            content: '✦';
+            position: absolute;
+            top: -20px;
+            left: -30px;
+            font-size: 2rem;
+            color: #c8b48c;
+            opacity: 0.6;
+        }
+
+        .island-main-title .coral::after {
+            content: '✦';
+            position: absolute;
+            bottom: -20px;
+            right: -30px;
+            font-size: 2rem;
+            color: #c8b48c;
+            opacity: 0.6;
+        }
+
+        .island-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 1rem 2rem;
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            border-radius: 50px;
+            font-weight: 400;
+        }
+
+        /* ===== ISLAND FEATURED SECTION ===== */
+        .island-featured {
+            padding: 5rem 0 3rem;
+            background: #f5efe8;
+        }
+
+        .island-card {
+            background: #ffffff;
+            padding: 3rem;
+            box-shadow: 0 40px 60px -20px rgba(0,0,0,0.15);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            border-radius: 40px;
+        }
+
+        .island-label {
+            color: #c8b48c;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .island-heading {
+            font-family: 'Prata', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #0b2545;
+            margin-bottom: 2rem;
+        }
+
+        .island-heading span {
+            color: #c8b48c;
+            font-style: italic;
+        }
+
+        /* ===== FIXED: WAVE SHAPE IMAGES ===== */
+        .paradise-image {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            
+            /* WAVE SHAPE - same as women's page */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+            
+            /* Remove any extra borders */
+            border: none;
+            outline: none;
+            box-shadow: 0 20px 25px -8px rgba(200, 113, 75, 0.4);
+        }
+
+        .paradise-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+            /* Image follows same wave shape */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        .paradise-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Gold Corner Accents */
+        .paradise-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-top: 2px solid #c8b48c;
+            border-left: 2px solid #c8b48c;
+            z-index: 10;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .paradise-image::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid #c8b48c;
+            border-right: 2px solid #c8b48c;
+            z-index: 10;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Island Badge */
+        .island-badge {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem 2rem;
+            border-left: 5px solid #c8b48c;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            z-index: 20;
+        }
+
+        .island-badge h3 {
+            font-family: 'Prata', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #0b2545;
+            margin-bottom: 0.3rem;
+        }
+
+        .island-badge .location {
+            color: #c8b48c;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .island-badge .price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0b2545;
+        }
+
+        .island-badge .price span {
+            font-size: 0.85rem;
+            color: #5f6b7a;
+            font-weight: 400;
+        }
+
+        /* Thumbnail Grid - Wave Shape */
+        .thumb-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .thumb-item {
+            height: 90px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            /* Wave shape for thumbnails */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+            border: 2px solid transparent;
+        }
+
+        .thumb-item:hover {
+            border-color: #c8b48c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -8px rgba(200, 180, 140, 0.5);
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+            /* Thumbnails follow wave shape */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        /* Island Details */
+        .island-details {
+            padding: 1rem 0;
+        }
+
+        .specs-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            background: #f8f4ef;
+            padding: 1.2rem;
+            border-radius: 12px;
+        }
+
+        .spec-item {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .spec-item .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #c8b48c;
+            margin-bottom: 0.3rem;
+        }
+
+        .spec-item .value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0b2545;
+        }
+
+        .island-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5a6a;
+            margin-bottom: 1.5rem;
+        }
+
+        .amenity-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem;
+            background: #f8f4ef;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            border-radius: 30px;
+        }
+
+        .amenity-item i {
+            color: #c8b48c;
+            font-size: 1rem;
+            width: 20px;
+        }
+
+        .amenity-item span {
+            font-size: 0.85rem;
+            color: #0b2545;
+            font-weight: 500;
+        }
+
+        /* ===== OTHER ISLANDS SECTION ===== */
+        .other-islands {
+            padding: 5rem 0;
+            background: #ffffff;
+        }
+
+        .section-title-box {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title-box h2 {
+            font-family: 'Prata', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #0b2545;
+            margin-bottom: 1rem;
+        }
+
+        .section-title-box h2 span {
+            color: #c8b48c;
+        }
+
+        .section-title-box p {
+            color: #5f6b7a;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .island-card-item {
+            background: #ffffff;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+        }
+
+        .island-card-item:hover {
+            transform: translateY(-8px);
+            border-color: #c8b48c;
+            box-shadow: 0 25px 40px -15px rgba(200, 180, 140, 0.2);
+        }
+
+        .card-img-box {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            height: 200px;
+            
+            /* Wave shape for card images */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        .card-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+            /* Image follows wave shape */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        .island-card-item:hover .card-img-box img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #c8b48c;
+            color: #0b2545;
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            z-index: 10;
+        }
+
+        .card-content-box h4 {
+            font-family: 'Prata', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #0b2545;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-location-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #c8b48c;
+            font-size: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #5f6b7a;
+            margin-bottom: 1rem;
+        }
+
+        .card-feature-list {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .card-feature-list span {
+            font-size: 0.75rem;
+            color: #5f6b7a;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .card-feature-list i {
+            color: #c8b48c;
+            font-size: 0.8rem;
+        }
+
+        .card-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0b2545;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-bottom: 2px solid #c8b48c;
+            padding-bottom: 0.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-link-btn:hover {
+            color: #c8b48c;
+            gap: 0.8rem;
+        }
+
+        /* ===== WHY CHOOSE ISLAND SECTION ===== */
+        .choose-island {
+            padding: 5rem 0;
+            background: #f8f4ef;
+        }
+
+        .choose-card {
+            background: #ffffff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            height: 100%;
+            transition: all 0.3s ease;
+            border-radius: 16px;
+        }
+
+        .choose-card:hover {
+            transform: translateY(-8px);
+            border-color: #c8b48c;
+            box-shadow: 0 20px 40px -12px rgba(200, 180, 140, 0.2);
+        }
+
+        .choose-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            color: #c8b48c;
+            font-size: 1.8rem;
+            border-radius: 50%;
+        }
+
+        .choose-card h4 {
+            font-family: 'Prata', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #0b2545;
+            margin-bottom: 0.8rem;
+        }
+
+        .choose-card p {
+            color: #5f6b7a;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ===== ISLAND CTA SECTION ===== */
+        .island-cta {
+            padding: 4rem 0;
+            background: var(--light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .island-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+
+        .cta-box {
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-box h2 {
+            font-family: 'Prata', serif;
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-box h2 span {
+            color: #c8b48c;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-island-btn {
+            display: inline-block;
+            background: #c8b48c;
+            color: #0b2545;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #c8b48c;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        .cta-island-btn:hover {
+            background: transparent;
+            color: #c8b48c;
+        }
+
+        /* ===== FOOTER ===== */
+        .picnic-footer-compact {
+            background: #0a1f2e;
+            color: #fff;
+            position: relative;
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-logo-compact h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c8b48c;
+        }
+
+        .footer-logo-compact p {
+            color: rgba(200, 180, 140, 0.7);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-heading-compact {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading-compact::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #c8b48c;
+        }
+
+        .footer-links-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links-compact li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links-compact a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links-compact a:hover {
+            color: #c8b48c;
+            transform: translateX(5px);
+        }
+
+        .footer-links-compact a i {
+            margin-right: 5px;
+            color: #c8b48c;
+        }
+
+        .games-tags-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .game-tag-compact {
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .game-tag-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+        }
+
+        .contact-info-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info-compact li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+        }
+
+        .contact-info-compact li i {
+            color: #c8b48c;
+            width: 18px;
+        }
+
+        .social-icons-compact {
+            display: flex;
+            gap: 0.8rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .social-icon-compact {
+            width: 32px;
+            height: 32px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom-compact {
+            border-top: 1px solid rgba(200, 180, 140, 0.15);
+            padding: 1rem 0;
+        }
+
+        .copyright-compact {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+        }
+
+        .copyright-compact a {
+            color: #c8b48c;
+            text-decoration: none;
+        }
+
+        .footer-links-bottom {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+
+        .footer-links-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .footer-links-bottom a:hover {
+            color: #c8b48c;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .island-main-title {
+                font-size: 4rem;
+            }
+            
+            .island-heading {
+                font-size: 2.5rem;
+            }
+            
+            .paradise-image img {
+                height: 400px;
+            }
+            
+            .thumb-item {
+                height: 80px;
+            }
+            
+            .amenity-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .island-main-title {
+                font-size: 3rem;
+            }
+            
+            .island-badge {
+                padding: 1rem 1.2rem;
+            }
+            
+            .island-badge h3 {
+                font-size: 1.5rem;
+            }
+            
+            .thumb-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .thumb-item {
+                height: 100px;
+            }
+            
+            .amenity-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-box h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .island-main-title {
+                font-size: 2.2rem;
+            }
+            
+            .island-main-title .coral::before,
+            .island-main-title .coral::after {
+                display: none;
+            }
+            
+            .paradise-image img {
+                height: 250px;
+            }
+            
+            .thumb-item {
+                height: 70px;
+            }
+            
+            .island-badge {
+                left: 15px;
+                right: 15px;
+                padding: 0.8rem 1rem;
+            }
+            
+            .island-badge h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-anchor me-2" style="color: #c8b48c;"></i>
+                PicnicQo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">destinations</a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+                            <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item active" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Games & Activities</a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#" onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Island Paradise Page -->
+    <div class="island-page">
+        <!-- Island Header -->
+        <header class="island-header">
+            <div class="ocean-waves"></div>
+            <div class="island-floating">
+                <div class="island-float-item">🌴</div>
+                <div class="island-float-item">🐠</div>
+                <div class="island-float-item">🏝️</div>
+                <div class="island-float-item">🐚</div>
+                <div class="island-float-item">🌊</div>
+            </div>
+            <div class="container">
+                <div class="island-header-content">
+                    <div class="island-header-tag">EXCLUSIVE ISLAND COLLECTION</div>
+                    <h1 class="island-main-title">
+                        Island <span class="coral">Paradise</span>
+                    </h1>
+                    <p class="island-subtitle">Discover your private slice of heaven</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Island Section -->
+        <section class="island-featured">
+            <div class="container">
+                <div class="island-card">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="island-label">FEATURED PARADISE</div>
+                            <h2 class="island-heading">This Month's <span>Gem</span></h2>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-5">
+                        <div class="col-lg-7">
+                            <!-- Main Image - Wave Shape -->
+                            <div class="paradise-image">
+                                <img src="./island-img/bali.jpg" alt="Bali Island">
+                                <div class="island-badge">
+                                    <h3>Bali Island</h3>
+                                    <div class="location"><i class="fas fa-map-marker-alt me-2"></i>Andaman & Nicobar</div>
+                                    <div class="price">₹45,000 <span>/ night</span></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Thumbnail Grid - Wave Shape -->
+                            <div class="thumb-grid">
+                                <div class="thumb-item">
+                                    <img src="./island-img/palawan.jpg" alt="Palawan">
+                                </div>
+                                <div class="thumb-item">
+                                    <img src="./island-img/Paros.jpg" alt="Paros">
+                                </div>
+                                <div class="thumb-item">
+                                    <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=2" alt="Sunset">
+                                </div>
+                                <div class="thumb-item">
+                                    <img src="https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=2" alt="Overwater">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-5">
+                            <div class="island-details">
+                                <div class="specs-row">
+                                    <div class="spec-item">
+                                        <div class="label">VILLAS</div>
+                                        <div class="value">5</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="label">BEACH</div>
+                                        <div class="value">Private</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="label">GUESTS</div>
+                                        <div class="value">12</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="label">AREA</div>
+                                        <div class="value">8 acres</div>
+                                    </div>
+                                </div>
+                                
+                                <p class="island-desc">
+                                    A private island paradise with crystal clear waters, powder-soft beaches, 
+                                    and luxurious overwater villas. Perfect for honeymoons and exclusive getaways.
+                                </p>
+                                
+                                <div class="amenity-list">
+                                    <div class="amenity-item">
+                                        <i class="fas fa-swimming-pool"></i>
+                                        <span>Infinity Pool</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-ship"></i>
+                                        <span>Yacht</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-wifi"></i>
+                                        <span>Starlink</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                        <span>Beach</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-fish"></i>
+                                        <span>Snorkeling</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-water"></i>
+                                        <span>Kayaks</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Chef</span>
+                                    </div>
+                                    <div class="amenity-item">
+                                        <i class="fas fa-spa"></i>
+                                        <span>Spa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Islands Section -->
+        <section class="other-islands">
+            <div class="container">
+                <div class="section-title-box">
+                    <h2>Discover <span>More</span> Islands</h2>
+                    <p>Explore our handpicked collection of private island retreats</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="island-card-item">
+                            <div class="card-img-box">
+                                <img src="./island-img/Paros.jpg" alt="Sunset Isle">
+                                <div class="card-tag">BESTSELLER</div>
+                            </div>
+                            <div class="card-content-box">
+                                <h4>Sunset Isle</h4>
+                                <div class="card-location-box">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Lakshadweep</span>
+                                </div>
+                                <p class="card-desc">Romantic island with world's best sunset views.</p>
+                                <div class="card-feature-list">
+                                    <span><i class="fas fa-water"></i> Lagoon</span>
+                                    <span><i class="fas fa-sun"></i> Sunset</span>
+                                    <span><i class="fas fa-ship"></i> Cruise</span>
+                                </div>
+                                <a href="#" class="card-link-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="island-card-item">
+                            <div class="card-img-box">
+                                <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=2" alt="Emerald Bay">
+                                <div class="card-tag">LUXURY</div>
+                            </div>
+                            <div class="card-content-box">
+                                <h4>Emerald Bay</h4>
+                                <div class="card-location-box">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Thailand</span>
+                                </div>
+                                <p class="card-desc">Luxury villas surrounded by emerald waters.</p>
+                                <div class="card-feature-list">
+                                    <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                                    <span><i class="fas fa-spa"></i> Spa</span>
+                                    <span><i class="fas fa-utensils"></i> Fine Dining</span>
+                                </div>
+                                <a href="#" class="card-link-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="island-card-item">
+                            <div class="card-img-box">
+                                <img src="https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=2" alt="Pearl Island">
+                                <div class="card-tag">PRIVATE</div>
+                            </div>
+                            <div class="card-content-box">
+                                <h4>Pearl Island</h4>
+                                <div class="card-location-box">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Maldives</span>
+                                </div>
+                                <p class="card-desc">Exclusive private island with overwater villas.</p>
+                                <div class="card-feature-list">
+                                    <span><i class="fas fa-water"></i> House Reef</span>
+                                    <span><i class="fas fa-fish"></i> Diving</span>
+                                    <span><i class="fas fa-glass-cheers"></i> Bar</span>
+                                </div>
+                                <a href="#" class="card-link-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Island Section -->
+        <section class="choose-island">
+            <div class="container">
+                <div class="section-title-box">
+                    <h2>Why <span>Choose</span> Us</h2>
+                    <p>Experience paradise with our exclusive island services</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="choose-card">
+                            <div class="choose-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h4>Private & Exclusive</h4>
+                            <p>Your own private island experience with complete privacy.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="choose-card">
+                            <div class="choose-icon">
+                                <i class="fas fa-concierge-bell"></i>
+                            </div>
+                            <h4>Butler Service</h4>
+                            <p>Dedicated butler for every villa, 24/7 personalized service.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="choose-card">
+                            <div class="choose-icon">
+                                <i class="fas fa-ship"></i>
+                            </div>
+                            <h4>Yacht Charters</h4>
+                            <p>Private yacht transfers and day cruises included.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="choose-card">
+                            <div class="choose-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4>Gourmet Dining</h4>
+                            <p>Personal chef crafting meals from fresh local ingredients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Island CTA Section -->
+        <section class="island-cta">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Your <span>Island</span> Awaits</h2>
+                    <p>Book your dream island escape and experience paradise like never before.</p>
+                    <a href="https://www.privateislandsonline.com/" class="cta-island-btn" target="_blank">Explore All Islands</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+ 
+
+        <!-- footer -->
+    <footer class="picnic-footer-compact">
+      <div class="container footer-content">
+        <div class="row g-4">
+          <!-- Col 1: Logo + Social (Small) -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-compact">
+              <h4>Picnic<span>Play</span></h4>
+              <p>FUN & GAMES</p>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+              "
+            >
+              Outdoor & indoor games for all ages. Create memories with family
+              and friends.
+            </p>
+            <div class="social-icons-compact">
+              <a href="https://www.facebook.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links (Compact) -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading-compact">Explore</h5>
+            <ul class="footer-links-compact">
+              <li>
+                <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
+              </li>
+               <li>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a>
+              </li>
+                <a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Game Tags (Compact) -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading-compact">Game Categories</h5>
+            <div class="games-tags-compact">
+              <span class="game-tag-compact"
+                ><i class="fas fa-tree"></i> Outdoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-home"></i> Indoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-child"></i> Kids</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-female"></i> Women</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-male"></i> Men</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-users"></i> Family</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-chess"></i> Board</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-futbol"></i> Sports</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-dice"></i> Cards</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Contact (Compact) -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading-compact">Get in Touch</h5>
+            <ul class="contact-info-compact">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+              <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+              <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Very Compact) -->
+      <div class="footer-bottom-compact">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-compact">
+                © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links-bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

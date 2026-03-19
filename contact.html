@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PicniQo | Let's Connect</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5efe8;
+            color: #2d3e40;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+
+        /* ===== NAVBAR (Same as other pages) ===== */
+        .navbar {
+            background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+        }
+
+        /* ===== NEW HERO SECTION - EXACT STYLE AS ABOUT PAGE ===== */
+        .contact-hero {
+            background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+            padding: 6rem 0;
+            position: relative;
+            color: white;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 2;
+        }
+
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(200, 180, 140, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .decoration-line {
+            width: 50px;
+            height: 2px;
+            background: rgba(200, 180, 140, 0.4);
+        }
+
+        .decoration-icon {
+            color: #c8b48c;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .hero-subtitle {
+            color: #c8b48c;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            display: inline-block;
+            background: rgba(200, 180, 140, 0.1);
+            padding: 0.6rem 2rem;
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            margin-bottom: 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title .gold-text {
+            color: #c8b48c;
+            position: relative;
+            font-style: italic;
+        }
+
+        .hero-title .gold-text::before {
+            content: '✨';
+            position: absolute;
+            top: -20px;
+            left: -30px;
+            font-size: 2rem;
+            opacity: 0.6;
+        }
+
+        .hero-title .gold-text::after {
+            content: '✨';
+            position: absolute;
+            bottom: -20px;
+            right: -30px;
+            font-size: 2rem;
+            opacity: 0.6;
+        }
+
+        .hero-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 60px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .float-icon {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .float-icon:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .float-icon:nth-child(2) { top: 70%; right: 15%; animation-delay: 1s; }
+        .float-icon:nth-child(3) { bottom: 25%; left: 20%; animation-delay: 2s; }
+        .float-icon:nth-child(4) { top: 35%; right: 25%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+
+
+        /* ===== MAIN CONTACT SECTION ===== */
+        .main-contact-section {
+            padding: 0 0 5rem;
+            margin-top: -4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-grid {
+            background: #ffffff;
+            border-radius: 40px;
+            box-shadow: 0 50px 80px -30px rgba(0,0,0,0.3);
+            overflow: hidden;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+        }
+
+        /* Contact Info Side */
+        .contact-info-side {
+            background: linear-gradient(145deg, #0b2545 0%, #1a3b5c 100%);
+            padding: 3rem;
+            color: white;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info-side::before {
+            content: "🎪 🧺 🎮";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.1;
+            color: white;
+            transform: rotate(-10deg);
+        }
+
+        .info-badge {
+            display: inline-block;
+            background: rgba(200, 180, 140, 0.2);
+            border: 1px solid rgba(200, 180, 140, 0.4);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: #c8b48c;
+        }
+
+        .info-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .info-title span {
+            color: #c8b48c;
+            display: block;
+            font-style: italic;
+        }
+
+        .info-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Contact Details */
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+            align-items: flex-start;
+        }
+
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(200, 180, 140, 0.15);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .detail-item:hover .detail-icon {
+            background: #c8b48c;
+            color: #0b2545;
+            transform: scale(1.1);
+        }
+
+        .detail-content h6 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: white;
+        }
+
+        .detail-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .detail-content a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .detail-content a:hover {
+            color: #c8b48c;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: #c8b48c;
+            color: #0b2545;
+            transform: translateY(-5px);
+        }
+
+        /* Contact Form Side */
+        .contact-form-side {
+            padding: 3rem;
+            background: #ffffff;
+        }
+
+        .form-badge {
+            display: inline-block;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: #c8b48c;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 2rem;
+        }
+
+        .form-title span {
+            color: #c8b48c;
+        }
+
+        /* Form Styling */
+        .form-floating {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control, .form-select {
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            border-radius: 15px;
+            padding: 1rem;
+            height: auto;
+            background: #f9f7f4;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #c8b48c;
+            box-shadow: 0 0 0 0.2rem rgba(200, 180, 140, 0.25);
+            background: #ffffff;
+        }
+
+        .form-floating label {
+            color: #6c757d;
+            padding: 1rem;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #c8b48c;
+            color: #0b2545;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #c8b48c;
+            width: 100%;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: transparent;
+            color: #c8b48c;
+        }
+
+        .submit-btn i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== MAP SECTION ===== */
+        .map-section {
+            padding: 3rem 0 5rem;
+        }
+
+        .map-wrapper {
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -20px rgba(0,0,0,0.3);
+            border: 2px solid rgba(200, 180, 140, 0.2);
+            height: 450px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 4rem 0;
+            background: #f9f7f4;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #c8b48c;
+            box-shadow: 0 10px 30px -10px rgba(200, 180, 140, 0.3);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0b2545;
+            margin-bottom: 0;
+        }
+
+        .faq-question i {
+            color: #c8b48c;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(200, 180, 140, 0.2);
+            color: #5f6b7a;
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .picnic-footer-compact {
+            background: #0a1f2e;
+            color: #fff;
+            position: relative;
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-logo-compact h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c8b48c;
+        }
+
+        .footer-logo-compact p {
+            color: rgba(200, 180, 140, 0.7);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-heading-compact {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading-compact::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #c8b48c;
+        }
+
+        .footer-links-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links-compact li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links-compact a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links-compact a:hover {
+            color: #c8b48c;
+            transform: translateX(5px);
+        }
+
+        .footer-links-compact a i {
+            margin-right: 5px;
+            color: #c8b48c;
+        }
+
+        .games-tags-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .game-tag-compact {
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .game-tag-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+        }
+
+        .contact-info-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info-compact li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+        }
+
+        .contact-info-compact li i {
+            color: #c8b48c;
+            width: 18px;
+        }
+
+        .social-icons-compact {
+            display: flex;
+            gap: 0.8rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .social-icon-compact {
+            width: 32px;
+            height: 32px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom-compact {
+            border-top: 1px solid rgba(200, 180, 140, 0.15);
+            padding: 1rem 0;
+        }
+
+        .copyright-compact {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+        }
+
+        .copyright-compact a {
+            color: #c8b48c;
+            text-decoration: none;
+        }
+
+        .footer-links-bottom {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+
+        .footer-links-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .footer-links-bottom a:hover {
+            color: #c8b48c;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-title .gold-text::before,
+            .hero-title .gold-text::after {
+                font-size: 1.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
+            }
+            
+            .float-icon {
+                font-size: 2rem;
+            }
+            
+            .contact-info-side,
+            .contact-form-side {
+                padding: 2rem;
+            }
+            
+            .info-title {
+                font-size: 2.2rem;
+            }
+            
+            .form-title {
+                font-size: 1.8rem;
+            }
+            
+            .map-wrapper {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+
+      <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo - Left -->
+             <a class="navbar-brand" href="index.html">
+                <i class="fas fa-anchor me-2" style="color: var(--primary);"></i>
+                PicnicQo
+            </a>
+
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu - Center (using mx-auto) -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    
+                    <!-- Dropdown - Picnic Places -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+                             <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown - Games & Activities -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Games & Activities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">contact</a>
+                    </li>
+                </ul>
+
+                <!-- Buttons - Right -->
+                <div class="nav-buttons">
+                  <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#"onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- New Contact Hero Section - Exactly Like About Page -->
+    <section class="contact-hero">
+        <div class="floating-elements">
+            <span class="float-icon">✉️</span>
+            <span class="float-icon">📞</span>
+            <span class="float-icon">📍</span>
+            <span class="float-icon">💬</span>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb">
+                </nav>
+                
+                <div class="hero-decoration">
+                    <span class="decoration-line"></span>
+                    <span class="decoration-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="decoration-line"></span>
+                </div>
+                
+                <div class="hero-subtitle">
+                    ✨ GET IN TOUCH ✨
+                </div>
+                
+                <h1 class="hero-title">
+                    Contact<span class="gold-text">Us</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Begin your luxury adventures. We're here to craft your perfect voyage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="main-contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="contact-grid">
+                        <div class="row g-0">
+                            <!-- Left Side - Contact Info -->
+                            <div class="col-lg-5">
+                                <div class="contact-info-side">
+                                    <span class="info-badge">✨ REACH OUT TO US</span>
+                                    <h2 class="info-title">
+                                        Let's Plan Your
+                                        <span>Perfect Picnic</span>
+                                    </h2>
+                                    <p class="info-text">
+                                        Whether you have questions about our games, want to book an event, 
+                                        or just want to say hello - we're here for you!
+                                    </p>
+
+                                    <div class="contact-details">
+                                        <!-- Phone -->
+                                        <div class="detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-phone-alt"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <h6>Call Us Anytime</h6>
+                                                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                                                <p><a href="tel:+911234567890">+91 12345 67890</a></p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Email -->
+                                        <div class="detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <h6>Email Us</h6>
+                                                <p><a href="mailto:hello@picniqo.com">hello@picniqo.com</a></p>
+                                                <p><a href="mailto:bookings@picniqo.com">bookings@picniqo.com</a></p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Location -->
+                                        <div class="detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <h6>Visit Our Office</h6>
+                                                <p>123 Picnic Park Avenue<br>Green Valley, Nature City - 400001</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Hours -->
+                                        <div class="detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <h6>Working Hours</h6>
+                                                <p>Monday - Sunday: 9:00 AM - 8:00 PM</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Social Links -->
+                                    <div class="social-links">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Side - Contact Form -->
+                            <div class="col-lg-7">
+                                <div class="contact-form-side">
+                                    <span class="form-badge">📝 SEND US A MESSAGE</span>
+                                    <h3 class="form-title">
+                                        Get in <span>Touch</span>
+                                    </h3>
+
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                                                    <label for="firstName">First Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                                                    <label for="lastName">Last Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                                                    <label for="email">Email Address</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                                                    <label for="phone">Phone Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <select class="form-select" id="interest">
+                                                        <option selected>Select Interest</option>
+                                                        <option value="1">Family Games</option>
+                                                        <option value="2">Women Games</option>
+                                                        <option value="3">Kids Games</option>
+                                                        <option value="4">Men Games</option>
+                                                        <option value="5">Water Parks</option>
+                                                        <option value="6">Parks</option>
+                                                        <option value="7">Beach</option>
+                                                    </select>
+                                                    <label for="interest">I'm Interested In</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" id="message" placeholder="Your Message" style="height: 120px"></textarea>
+                                                    <label for="message">Your Message</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="submit-btn">
+                                                    Send Message <i class="fas fa-paper-plane"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-73.98510768458417!3d40.75889697932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                                allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-tagline text-center mb-5">
+                <h3 style="font-family: 'Cormorant Garamond'; font-size: 2.8rem; color: #0b2545;">
+                    Frequently Asked <span style="color: #c8b48c;">Questions</span>
+                </h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5>How do I book a picnic package?</h5>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            You can book directly through our website using the contact form above, or give us a call at +91 98765 43210. We'll help you choose the perfect package for your needs.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5>What is your cancellation policy?</h5>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Free cancellation up to 48 hours before the event. Cancellations within 48 hours may incur a 25% fee. We also offer free rescheduling anytime.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5>Do you provide all equipment?</h5>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Yes! We provide all games equipment, picnic setups, and professional facilitators. Just bring yourselves and your appetite for fun!
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5>Can I customize a package?</h5>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Absolutely! We love creating custom experiences. Contact us with your requirements and we'll design the perfect picnic for you.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="picnic-footer-compact">
+        <div class="container footer-content">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-logo-compact">
+                        <h4>Picnic<span>Play</span></h4>
+                        <p>FUN & GAMES</p>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; line-height: 1.5; margin-bottom: 1rem;">
+                        Outdoor & indoor games for all ages. Create memories with family and friends.
+                    </p>
+                    <div class="social-icons-compact">
+                        <a href="#" class="social-icon-compact"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-compact"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-compact"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-compact"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading-compact">Explore</h5>
+                    <ul class="footer-links-compact">
+                        <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+                        <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading-compact">Game Categories</h5>
+                    <div class="games-tags-compact">
+                        <span class="game-tag-compact"><i class="fas fa-tree"></i> Outdoor</span>
+                        <span class="game-tag-compact"><i class="fas fa-home"></i> Indoor</span>
+                        <span class="game-tag-compact"><i class="fas fa-child"></i> Kids</span>
+                        <span class="game-tag-compact"><i class="fas fa-female"></i> Women</span>
+                        <span class="game-tag-compact"><i class="fas fa-male"></i> Men</span>
+                        <span class="game-tag-compact"><i class="fas fa-users"></i> Family</span>
+                        <span class="game-tag-compact"><i class="fas fa-chess"></i> Board</span>
+                        <span class="game-tag-compact"><i class="fas fa-futbol"></i> Sports</span>
+                        <span class="game-tag-compact"><i class="fas fa-dice"></i> Cards</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading-compact">Get in Touch</h5>
+                    <ul class="contact-info-compact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+                        <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-compact">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright-compact">© 2024 <a href="#">PicnicPlay</a> | All rights reserved</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-links-bottom">
+                            <a href="#">Privacy</a>
+                            <a href="#">Terms</a>
+                            <a href="#">Cookies</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+    
+
+</body>
+</html>

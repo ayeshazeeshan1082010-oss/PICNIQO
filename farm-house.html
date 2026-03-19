@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm House Collection - Luxury Rural Retreats</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fbf9f5;
+            color: #2d3e40;
+        }
+
+        /* ===== FARM HOUSE PAGE ===== */
+        .farm-page {
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .farm-header {
+            background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+            padding: 6rem 0 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .farm-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+
+        .farm-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, #fbf9f5, transparent);
+            z-index: 2;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .float-item {
+            position: absolute;
+            color: rgba(200, 180, 140, 0.15);
+            font-size: 3rem;
+            animation: float 12s infinite ease-in-out;
+        }
+
+        .float-item:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .float-item:nth-child(2) { top: 75%; right: 12%; animation-delay: 2s; }
+        .float-item:nth-child(3) { bottom: 25%; left: 18%; animation-delay: 4s; }
+        .float-item:nth-child(4) { top: 35%; right: 22%; animation-delay: 6s; }
+        .float-item:nth-child(5) { bottom: 40%; right: 35%; animation-delay: 8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-tag {
+            color: #c8b48c;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            display: inline-block;
+            background: rgba(200, 180, 140, 0.1);
+            padding: 0.6rem 2rem;
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            margin-bottom: 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .farm-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+        }
+
+        .farm-title .gold {
+            color: #c8b48c;
+            font-style: italic;
+            position: relative;
+        }
+
+        .farm-title .gold::before {
+            content: '✦';
+            position: absolute;
+            top: -15px;
+            left: -25px;
+            font-size: 1.8rem;
+            color: #c8b48c;
+            opacity: 0.6;
+        }
+
+        .farm-title .gold::after {
+            content: '✦';
+            position: absolute;
+            bottom: -15px;
+            right: -25px;
+            font-size: 1.8rem;
+            color: #c8b48c;
+            opacity: 0.6;
+        }
+
+        .farm-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 1rem 2rem;
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            border-radius: 40px;
+        }
+
+        /* ===== FEATURED FARM SECTION ===== */
+        .featured-section {
+            padding: 5rem 0 3rem;
+            background: #fbf9f5;
+        }
+
+        .featured-wrapper {
+            background: #ffffff;
+            padding: 3rem;
+            box-shadow: 0 40px 60px -20px rgba(0,0,0,0.15);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            border-radius: 20px;
+        }
+
+        .featured-label {
+            color: #c8b48c;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 2rem;
+        }
+
+        .featured-heading span {
+            color: #c8b48c;
+            font-style: italic;
+        }
+
+        /* ===== FIXED: WAVE SHAPE IMAGES ===== */
+        .main-image {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            
+            /* WAVE SHAPE - same as women's page */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+            
+            /* Remove any extra borders */
+            border: none;
+            outline: none;
+            box-shadow: 0 20px 25px -8px rgba(200, 113, 75, 0.4);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+            /* Image follows same wave shape */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        .main-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Gold Corner Accents */
+        .main-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-top: 2px solid #c8b48c;
+            border-left: 2px solid #c8b48c;
+            z-index: 10;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .main-image::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid #c8b48c;
+            border-right: 2px solid #c8b48c;
+            z-index: 10;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Image Badge */
+        .imagee-badge {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem 2rem;
+            border-left: 5px solid #c8b48c;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            z-index: 20;
+        }
+
+        .imagee-badge h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 0.2rem;
+        }
+
+        .imagee-badge .location {
+            color: #c8b48c;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .imagee-badge .price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0b2545;
+        }
+
+        .imagee-badge .price span {
+            font-size: 0.85rem;
+            color: #5f6b7a;
+            font-weight: 400;
+        }
+
+        /* Thumbnail Grid - Wave Shape for Thumbnails */
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .thumbnail {
+            height: 90px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            /* Wave shape for thumbnails */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail:hover {
+            border-color: #c8b48c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -8px rgba(200, 180, 140, 0.5);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+            /* Thumbnails follow wave shape */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        /* Farm Details */
+        .farm-details {
+            padding: 1rem 0;
+        }
+
+        .details-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            background: #f8f4ef;
+            padding: 1.2rem;
+            border-radius: 12px;
+        }
+
+        .details-item {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .details-item .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #c8b48c;
+            margin-bottom: 0.3rem;
+        }
+
+        .details-item .value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0b2545;
+        }
+
+        .farm-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5a6a;
+            margin-bottom: 1.5rem;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .amenity {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem;
+            background: #f8f4ef;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            border-radius: 30px;
+        }
+
+        .amenity i {
+            color: #c8b48c;
+            font-size: 1rem;
+            width: 20px;
+        }
+
+        .amenity span {
+            font-size: 0.85rem;
+            color: #0b2545;
+            font-weight: 500;
+        }
+
+        /* Book Button */
+        .book-btn {
+            display: inline-block;
+            background: #0b2545;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 2px solid #0b2545;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px -8px rgba(11, 37, 69, 0.3);
+        }
+
+        .book-btn i {
+            color: #c8b48c;
+            margin-left: 0.6rem;
+            transition: transform 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background: transparent;
+            color: #0b2545;
+        }
+
+        .book-btn:hover i {
+            transform: translateX(5px);
+            color: #c8b48c;
+        }
+
+        /* ===== OTHER FARMS SECTION ===== */
+        .other-farms-section {
+            padding: 5rem 0;
+            background: #ffffff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 span {
+            color: #c8b48c;
+        }
+
+        .section-header p {
+            color: #5f6b7a;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .farm-card {
+            background: #ffffff;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+        }
+
+        .farm-card:hover {
+            transform: translateY(-8px);
+            border-color: #c8b48c;
+            box-shadow: 0 25px 40px -15px rgba(200, 180, 140, 0.2);
+        }
+
+        .card-image {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            height: 200px;
+            
+            /* Wave shape for card images */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+            /* Image follows wave shape */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        .farm-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #c8b48c;
+            color: #0b2545;
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            z-index: 10;
+        }
+
+        .card-content h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 0.2rem;
+        }
+
+        .card-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #c8b48c;
+            font-size: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .farm-description.small {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #5f6b7a;
+            margin-bottom: 1rem;
+        }
+
+        .card-features {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .card-features span {
+            font-size: 0.75rem;
+            color: #5f6b7a;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .card-features i {
+            color: #c8b48c;
+            font-size: 0.8rem;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0b2545;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-bottom: 2px solid #c8b48c;
+            padding-bottom: 0.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #c8b48c;
+            gap: 0.8rem;
+        }
+
+        /* ===== WHY CHOOSE US SECTION ===== */
+        .why-choose-section {
+            padding: 5rem 0;
+            background: #f8f4ef;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            height: 100%;
+            transition: all 0.3s ease;
+            border-radius: 16px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #c8b48c;
+            box-shadow: 0 20px 40px -12px rgba(200, 180, 140, 0.2);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            color: #c8b48c;
+            font-size: 1.8rem;
+            border-radius: 50%;
+        }
+
+        .feature-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: #5f6b7a;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .ctaa-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ctaa-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+
+        .ctaa-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .ctaa-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .ctaa-content h2 span {
+            color: #c8b48c;
+        }
+
+        .ctaa-content p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #c8b48c;
+            color: #0b2545;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #c8b48c;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: #c8b48c;
+        }
+
+        /* ===== FOOTER ===== */
+        .picnic-footer-compact {
+            background: #0a1f2e;
+            color: #fff;
+            position: relative;
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-logo-compact h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c8b48c;
+        }
+
+        .footer-logo-compact p {
+            color: rgba(200, 180, 140, 0.7);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-heading-compact {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading-compact::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #c8b48c;
+        }
+
+        .footer-links-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links-compact li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links-compact a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links-compact a:hover {
+            color: #c8b48c;
+            transform: translateX(5px);
+        }
+
+        .footer-links-compact a i {
+            margin-right: 5px;
+            color: #c8b48c;
+        }
+
+        .games-tags-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .game-tag-compact {
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .game-tag-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+        }
+
+        .contact-info-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info-compact li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+        }
+
+        .contact-info-compact li i {
+            color: #c8b48c;
+            width: 18px;
+        }
+
+        .social-icons-compact {
+            display: flex;
+            gap: 0.8rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .social-icon-compact {
+            width: 32px;
+            height: 32px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom-compact {
+            border-top: 1px solid rgba(200, 180, 140, 0.15);
+            padding: 1rem 0;
+        }
+
+        .copyright-compact {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+        }
+
+        .copyright-compact a {
+            color: #c8b48c;
+            text-decoration: none;
+        }
+
+        .footer-links-bottom {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+
+        .footer-links-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .footer-links-bottom a:hover {
+            color: #c8b48c;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .farm-title {
+                font-size: 4rem;
+            }
+            
+            .main-image img {
+                height: 400px;
+            }
+            
+            .thumbnail {
+                height: 80px;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .farm-title {
+                font-size: 3rem;
+            }
+            
+            .main-image img {
+                height: 350px;
+            }
+            
+            .imagee-badge {
+                padding: 1rem 1.2rem;
+            }
+            
+            .imagee-badge h3 {
+                font-size: 1.5rem;
+            }
+            
+            .thumbnail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .thumbnail {
+                height: 100px;
+            }
+            
+            .ctaa-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .farm-title {
+                font-size: 2.2rem;
+            }
+            
+            .farm-title .gold::before,
+            .farm-title .gold::after {
+                display: none;
+            }
+            
+            .main-image img {
+                height: 250px;
+            }
+            
+            .imagee-badge {
+                left: 15px;
+                right: 15px;
+                padding: 0.8rem 1rem;
+            }
+            
+            .imagee-badge h3 {
+                font-size: 1.2rem;
+            }
+            
+            .thumbnail {
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+
+      <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo - Left -->
+             <a class="navbar-brand" href="index.html">
+                <i class="fas fa-anchor me-2" style="color: var(--primary);"></i>
+                PicnicQo
+            </a>
+
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu - Center (using mx-auto) -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    
+                    <!-- Dropdown - Picnic Places -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+                             <li><a class="dropdown-item active" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown - Games & Activities -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Games & Activities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">contact</a>
+                    </li>
+                </ul>
+
+                <!-- Buttons - Right -->
+                <div class="nav-buttons">
+                  <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#"onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Farm House Page -->
+    <div class="farm-page">
+        <!-- Header -->
+        <header class="farm-header">
+            <div class="floating-elements">
+                <div class="float-item">🌾</div>
+                <div class="float-item">🚜</div>
+                <div class="float-item">🌻</div>
+                <div class="float-item">🏡</div>
+                <div class="float-item">🌽</div>
+            </div>
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-tag">LUXURY RURAL RETREATS</div>
+                    <h1 class="farm-title">
+                        Farm House <span class="gold">Collection</span>
+                    </h1>
+                    <p class="farm-subtitle">Experience the charm of countryside living</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Farm Section -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="featured-wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="featured-label">FEATURED PROPERTY</div>
+                            <h2 class="featured-heading">Rani <span>Empire</span></h2>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-5">
+                        <div class="col-lg-7">
+                            <!-- Main Image - Wave Shape -->
+                            <div class="main-image">
+                                <img src="https://www.raniempire.com/wp-content/uploads/2018/02/4.jpg" alt="Rani Empire Farm">
+                                <div class="imagee-badge">
+                                    <h3>Soomair Kanghi Road</h3>
+                                    <div class="location"><i class="fas fa-map-marker-alt me-2"></i>Near Memon Goth, District Malir, Karachi</div>
+                                    <div class="price">50,000-80,000 <span>PKR</span></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Thumbnail Grid - Wave Shape -->
+                            <div class="thumbnail-grid">
+                                <div class="thumbnail">
+                                    <img src="https://raniempire.com/wp-content/themes/raniempire/assets/img/banner/2.jpg" alt="Games Area">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="https://www.raniempire.com/wp-content/uploads/2018/03/15781103_1680122758680177_4555867494339329940_n.jpg" alt="Pool View">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="https://www.raniempire.com/wp-content/uploads/2018/02/4incfdacdm.jpg" alt="Garden View">
+                                </div>
+                                <div class="thumbnail">
+                                    <img src="https://www.raniempire.com/wp-content/gallery/rani-empire-outside-view/cache/Main-Gate-View.jpg-nggid011-ngg0dyn-300x150x100-00f0w010c010r110f110r010t010.jpg" alt="Main Gate">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-5">
+                            <div class="farm-details">
+                                <div class="details-row">
+                                    <div class="details-item">
+                                        <div class="label">BEDROOMS</div>
+                                        <div class="value">2</div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="label">WASHROOMS</div>
+                                        <div class="value">3-4</div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="label">EXTRA-ROOM</div>
+                                        <div class="value">1</div>
+                                    </div>
+                                    <div class="details-item">
+                                        <div class="label">AREA</div>
+                                        <div class="value">1 acre</div>
+                                    </div>
+                                </div>
+                                
+                                <p class="farm-description">
+                                    Nestled amidst olive groves, this stunning farmhouse offers valley views, 
+                                    a private infinity pool, and organic dining experiences.
+                                </p>
+                                
+                                <div class="amenities-grid">
+                                    <div class="amenity">
+                                        <i class="fas fa-swimming-pool"></i>
+                                        <span>Pool</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Wide green lawn</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <i class="fas fa-wifi"></i>
+                                        <span>BBQ area</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <i class="fas fa-car"></i>
+                                        <span>Mini golf area</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <i class="fas fa-tree"></i>
+                                        <span>Baby pool</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <i class="fas fa-mountain"></i>
+                                        <span>Snooker</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Carrom</span>
+                                    </div>
+                                    <div class="amenity">
+                                        <i class="fas fa-spa"></i>
+                                        <span>American style kitchen</span>
+                                    </div>
+                                </div>
+                                
+                                <a href="https://www.raniempire.com/" class="book-btn" target="_blank">
+                                    Check Availability <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Farm Houses Section -->
+        <section class="other-farms-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore <span>More</span> Farm Stays</h2>
+                    <p>Discover our collection of premium farm houses across India</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="farm-card">
+                            <div class="card-image">
+                                <img src="https://piknify.com/wp-content/uploads/2025/08/IMG-20250620-WA0013-681x1024.webp" alt="Nature view Farm-house">
+                                <div class="card-badge">POPULAR</div>
+                            </div>
+                            <div class="card-content">
+                                <h4>Nature view Farm-house</h4>
+                                <div class="card-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Murad Memon goth, Gadap Town</span>
+                                </div>
+                                <p class="farm-description small">Creekside farmhouse with coffee estate.</p>
+                                <div class="card-features">
+                                    <span><i class="fas fa-water"></i> Creek</span>
+                                    <span><i class="fas fa-horse"></i> Riding</span>
+                                    <span><i class="fas fa-fire"></i> Bonfire</span>
+                                </div>
+                                <a href="https://piknify.com/farm-house/nature-view-farm-house/" class="card-link" target="_blank">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="farm-card">
+                            <div class="card-image">
+                                <img src="https://piknify.com/wp-content/uploads/2025/08/IMG-20250619-WA0063-300x200.webp" alt="Mirza Farm-house">
+                                <div class="card-badge">HERITAGE</div>
+                            </div>
+                            <div class="card-content">
+                                <h4>Mirza Farm-house</h4>
+                                <div class="card-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Gadap Town, Karachi</span>
+                                </div>
+                                <p class="farm-description small">Farm-house for family gatherings and celebrations.</p>
+                                <div class="card-features">
+                                    <span><i class="fas fa-sun"></i> Sunset</span>
+                                    <span><i class="fas fa-mountain"></i> Mountain</span>
+                                    <span><i class="fas fa-seedling"></i> Organic</span>
+                                </div>
+                                <a href="https://piknify.com/farm-house/mirza-farm-house/" class="card-link" target="_blank">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="farm-card">
+                            <div class="card-image">
+                                <img src="https://piknify.com/wp-content/uploads/2025/08/IMG-20250618-WA0158-300x171.webp" alt="King star Farm-house">
+                                <div class="card-badge">LUXURY</div>
+                            </div>
+                            <div class="card-content">
+                                <h4>King star Farm-house</h4>
+                                <div class="card-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Taiser Town, Karachi</span>
+                                </div>
+                                <p class="farm-description small">Horse farm in pine forest.</p>
+                                <div class="card-features">
+                                    <span><i class="fas fa-horse"></i> Horses</span>
+                                    <span><i class="fas fa-tree"></i> Forest</span>
+                                    <span><i class="fas fa-snowflake"></i> Snow</span>
+                                </div>
+                                <a href="https://piknify.com/farm-house/king-star-farm-house/" class="card-link" target="_blank">View Details <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why <span>Choose</span> Us</h2>
+                    <p>Experience the finest farm stays with unparalleled hospitality</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h4>Authentic</h4>
+                            <p>Genuine farm stays with organic produce and traditional hospitality.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>Curated</h4>
+                            <p>Handpicked farm houses for quality and unique experiences.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Safe</h4>
+                            <p>Strict safety and hygiene protocols for your peace of mind.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4>24/7 Support</h4>
+                            <p>Dedicated team to assist you anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="ctaa-section">
+            <div class="container">
+                <div class="ctaa-content">
+                    <h2>Ready for Your <span>Farm Escape?</span></h2>
+                    <p>Book your dream farm stay today and experience countryside luxury.</p>
+                    <a href="index.html#booking" class="cta-btn">Book Now</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- footer -->
+    <footer class="picnic-footer-compact">
+      <div class="container footer-content">
+        <div class="row g-4">
+          <!-- Col 1: Logo + Social (Small) -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-compact">
+              <h4>Picnic<span>Play</span></h4>
+              <p>FUN & GAMES</p>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+              "
+            >
+              Outdoor & indoor games for all ages. Create memories with family
+              and friends.
+            </p>
+            <div class="social-icons-compact">
+              <a href="https://www.facebook.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links (Compact) -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading-compact">Explore</h5>
+            <ul class="footer-links-compact">
+              <li>
+                <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
+              </li>
+               <li>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a>
+              </li>
+                <a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Game Tags (Compact) -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading-compact">Game Categories</h5>
+            <div class="games-tags-compact">
+              <span class="game-tag-compact"
+                ><i class="fas fa-tree"></i> Outdoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-home"></i> Indoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-child"></i> Kids</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-female"></i> Women</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-male"></i> Men</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-users"></i> Family</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-chess"></i> Board</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-futbol"></i> Sports</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-dice"></i> Cards</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Contact (Compact) -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading-compact">Get in Touch</h5>
+            <ul class="contact-info-compact">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+              <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+              <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Very Compact) -->
+      <div class="footer-bottom-compact">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-compact">
+                © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links-bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Gallery - PicniQo | Stunning Visuals</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        /* Your existing styles remain the same */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f9f7f4;
+        }
+
+        /* ===== WAVE GALLERY SECTION ===== */
+        .wave-gallery-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f9f7f4 0%, #1e1749 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Wave Pattern */
+        .wave-gallery-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 300%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23c8b48c" fill-opacity="0.03" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            pointer-events: none;
+        }
+
+        .container-fluid {
+            padding-left: 3rem;
+            padding-right: 3rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            color: #c8b48c;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            display: inline-block;
+            background: rgba(200, 180, 140, 0.1);
+            padding: 0.5rem 2rem;
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            margin-bottom: 1rem;
+            border-radius: 50px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #0b2545;
+            margin-bottom: 1rem;
+        }
+
+        .section-title span {
+            color: #c8b48c;
+            position: relative;
+        }
+
+        .section-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(200, 180, 140, 0.2);
+            z-index: -1;
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .divider-line {
+            width: 60px;
+            height: 2px;
+            background: #c8b48c;
+            opacity: 0.5;
+        }
+
+        .divider-icon {
+            color: #c8b48c;
+            font-size: 1rem;
+        }
+
+        /* ===== FILTER TABS - BEAUTIFUL ===== */
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 3rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #5f6b7a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid transparent;
+        }
+
+        .filter-btn i {
+            color: #c8b48c;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(200, 180, 140, 0.1);
+            color: #0b2545;
+            border-color: rgba(200, 180, 140, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #c8b48c;
+            color: #0b2545;
+            box-shadow: 0 10px 20px -5px rgba(200, 180, 140, 0.4);
+        }
+
+        .filter-btn.active i {
+            color: #0b2545;
+        }
+
+        /* ===== GALLERY GRID ===== */
+        .gallery-grid {
+            margin-top: 2rem;
+        }
+
+        /* Gallery Item - Wave Shape */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            border: 3px solid white;
+        }
+
+        .gallery-item:hover {
+            border-radius: 60% 40% 30% 70% / 60% 40% 50% 50%;
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 50px -12px #c8b48c;
+            border-color: #c8b48c;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Elegant Overlay */
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(11, 37, 69, 0.9), rgba(200, 180, 140, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .overlay-content {
+            transform: translateY(0);
+        }
+
+        .overlay-content h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: white;
+        }
+
+        .overlay-content p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .overlay-content p i {
+            color: #c8b48c;
+        }
+
+        /* Shine Effect */
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+            z-index: 5;
+        }
+
+        .gallery-item:hover::before {
+            left: 100%;
+        }
+
+        /* No Results Message */
+        .no-results {
+            text-align: center;
+            padding: 4rem;
+            color: #8a9aa8;
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+            display: none;
+        }
+
+        .no-results i {
+            font-size: 4rem;
+            color: #c8b48c;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        /* Active Navigation Link */
+        .navbar-nav .nav-link.active {
+            color: #c8b48c !important;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container-fluid {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .filter-tabs {
+                padding: 0.8rem;
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container-fluid {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .filter-tabs {
+                border-radius: 30px;
+            }
+            
+            .gallery-item {
+                border-radius: 30% 70% 50% 50% / 30% 40% 60% 70%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container-fluid {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .filter-tabs {
+                flex-direction: column;
+                align-items: stretch;
+                border-radius: 20px;
+            }
+            
+            .filter-btn {
+                justify-content: center;
+            }
+        }
+
+        /* Animation for filtered items */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .gallery-item {
+            animation: fadeInScale 0.5s ease;
+        }
+
+        /* Responsive count display */
+        .filter-count {
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+        }
+
+        .filter-btn.active .filter-count {
+            background: rgba(11, 37, 69, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo - Left -->
+            <a class="navbar-brand" href="index.html">PICNIQO</a>
+
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu - Center (using mx-auto) -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    
+                    <!-- Dropdown - Picnic Places -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="picnic-places.html" id="placesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            picnic-places
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+                            <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown - Games & Activities -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Games & Activities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">contact</a>
+                    </li>
+                </ul>
+
+                <!-- Buttons - Right -->
+                <div class="nav-buttons">
+                    <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#" onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Wave Gallery Section -->
+    <section class="wave-gallery-section">
+        <div class="container-fluid">
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header">
+                        <div class="section-tag">✨ VISUAL STORIES</div>
+                        <h2 class="section-title">Our <span>Magical</span> Moments</h2>
+                        <div class="section-divider">
+                            <span class="divider-line"></span>
+                            <span class="divider-icon"><i class="fas fa-star"></i></span>
+                            <span class="divider-line"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Tabs with Count Badges -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="filter-tabs" id="filterTabs">
+                        <!-- Buttons will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Grid - Bootstrap Row -->
+            <div class="row g-3 g-lg-4 gallery-grid" id="galleryGrid">
+                <!-- Kids Games -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="kids">
+                    <div class="gallery-item">
+                        <img src="./gallery images/kid pic 2.webp" alt="kids games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Kids Playtime</h5>
+                                <p><i class="fas fa-child"></i> Fun Activities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="kids">
+                    <div class="gallery-item">
+                        <img src="./gallery images/kids picnic.webp" alt="kids games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Picnic Fun</h5>
+                                <p><i class="fas fa-child"></i> Outdoor Games</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="kids">
+                    <div class="gallery-item">
+                        <img src="./gallery images/kids games.webp" alt="kids games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Creative Play</h5>
+                                <p><i class="fas fa-child"></i> Imagination</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="kids">
+                    <div class="gallery-item">
+                        <img src="./gallery images/kidgamess.jpg" alt="kids games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Adventure Time</h5>
+                                <p><i class="fas fa-child"></i> Exploration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="kids">
+                    <div class="gallery-item">
+                        <img src="./gallery images/image_4ea67a182e44f186a6170ad2a5800be1kids.jpeg" alt="kids games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Happy Kids</h5>
+                                <p><i class="fas fa-child"></i> Smiles & Fun</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Women Games -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="women">
+                    <div class="gallery-item">
+                        <img src="./gallery images/women pic.jpg" alt="women games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Women's Day</h5>
+                                <p><i class="fas fa-female"></i> Celebration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="women">
+                    <div class="gallery-item">
+                        <img src="./gallery images/games women.webp" alt="women games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Team Spirit</h5>
+                                <p><i class="fas fa-female"></i> Togetherness</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="women">
+                    <div class="gallery-item">
+                        <img src="./gallery images/women games.jpg" alt="women games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Fun Activities</h5>
+                                <p><i class="fas fa-female"></i> Games & Laughs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="women">
+                    <div class="gallery-item">
+                        <img src="./gallery images/tug war.jpg" alt="women games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Tug of War</h5>
+                                <p><i class="fas fa-female"></i> Strength & Fun</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="women">
+                    <div class="gallery-item">
+                        <img src="./gallery images/People-out-hula-hooping-in-a-field-750x500.webp" alt="women games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Hula Hoop</h5>
+                                <p><i class="fas fa-female"></i> Fitness Fun</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Men Games -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="men">
+                    <div class="gallery-item">
+                        <img src="./gallery images/mens pic 1.jpg" alt="men games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Competition</h5>
+                                <p><i class="fas fa-male"></i> Sports</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="men">
+                    <div class="gallery-item">
+                        <img src="./gallery images/arm wrestling.jpg" alt="men games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Arm Wrestling</h5>
+                                <p><i class="fas fa-male"></i> Strength</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="men">
+                    <div class="gallery-item">
+                        <img src="./gallery images/water polo.webp" alt="men games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Water Polo</h5>
+                                <p><i class="fas fa-male"></i> Aquatic Sports</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="men">
+                    <div class="gallery-item">
+                        <img src="./gallery images/park rough.jpg" alt="men games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Outdoor Fun</h5>
+                                <p><i class="fas fa-male"></i> Adventure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="men">
+                    <div class="gallery-item">
+                        <img src="./gallery images/tres-homens-a-jogar-futebol-um-deles-esta-a-usar-uma-camisa-laranja_1021867-125638.jpg" alt="men games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Football</h5>
+                                <p><i class="fas fa-male"></i> Team Sport</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Games -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="family">
+                    <div class="gallery-item">
+                        <img src="./gallery images/family.jpeg" alt="family games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Family Time</h5>
+                                <p><i class="fas fa-users"></i> Togetherness</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="family">
+                    <div class="gallery-item">
+                        <img src="./gallery images/family.jpg" alt="family games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Picnic Day</h5>
+                                <p><i class="fas fa-users"></i> Family Fun</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="family">
+                    <div class="gallery-item">
+                        <img src="./gallery images/family gamess.jpg" alt="family games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Games Night</h5>
+                                <p><i class="fas fa-users"></i> Bonding</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="family">
+                    <div class="gallery-item">
+                        <img src="./gallery images/families-playing-badminton-backyard_1230717-254844.jpg" alt="family games" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Badminton</h5>
+                                <p><i class="fas fa-users"></i> Active Family</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Island Views -->
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="island">
+                    <div class="gallery-item">
+                        <img src="./gallery images/WhatsApp Image 2026-02-27 at 4.36.49 PM.jpeg" alt="island view" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Paradise Island</h5>
+                                <p><i class="fas fa-umbrella-beach"></i> Tropical Escape</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="island">
+                    <div class="gallery-item">
+                        <img src="./gallery images/WhatsApp Image 2026-02-27 at 4.36.49 PM (7).jpeg" alt="island view" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Sunset Beach</h5>
+                                <p><i class="fas fa-umbrella-beach"></i> Relaxation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="island">
+                    <div class="gallery-item">
+                        <img src="./gallery images/WhatsApp Image 2026-02-27 at 4.36.48 PM.jpeg" alt="island view" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Clear Waters</h5>
+                                <p><i class="fas fa-umbrella-beach"></i> Adventure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="island">
+                    <div class="gallery-item">
+                        <img src="./gallery images/WhatsApp Image 2026-02-27 at 4.36.49 PM (2).jpeg" alt="island view" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Coastal Beauty</h5>
+                                <p><i class="fas fa-umbrella-beach"></i> Serenity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 gallery-item-col" data-category="island">
+                    <div class="gallery-item">
+                        <img src="https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="island view" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h5>Palm Paradise</h5>
+                                <p><i class="fas fa-umbrella-beach"></i> Vacation Vibes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="no-results" id="noResults">
+                        <i class="fas fa-search"></i>
+                        <h4>No images found</h4>
+                        <p>Try selecting a different category</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="picnic-footer-compact">
+        <div class="container footer-content">
+            <div class="row g-4">
+                <!-- Col 1: Logo + Social (Small) -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-logo-compact">
+                        <h4>Picnic<span>Play</span></h4>
+                        <p>FUN & GAMES</p>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; line-height: 1.5; margin-bottom: 1rem;">
+                        Outdoor & indoor games for all ages. Create memories with family and friends.
+                    </p>
+                    <div class="social-icons-compact">
+                        <a href="https://www.facebook.com/" class="social-icon-compact" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" class="social-icon-compact" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/" class="social-icon-compact" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/" class="social-icon-compact" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links (Compact) -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading-compact">Explore</h5>
+                    <ul class="footer-links-compact">
+                        <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+                        <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Game Tags (Compact) -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading-compact">Game Categories</h5>
+                    <div class="games-tags-compact">
+                        <span class="game-tag-compact"><i class="fas fa-tree"></i> Outdoor</span>
+                        <span class="game-tag-compact"><i class="fas fa-home"></i> Indoor</span>
+                        <span class="game-tag-compact"><i class="fas fa-child"></i> Kids</span>
+                        <span class="game-tag-compact"><i class="fas fa-female"></i> Women</span>
+                        <span class="game-tag-compact"><i class="fas fa-male"></i> Men</span>
+                        <span class="game-tag-compact"><i class="fas fa-users"></i> Family</span>
+                        <span class="game-tag-compact"><i class="fas fa-chess"></i> Board</span>
+                        <span class="game-tag-compact"><i class="fas fa-futbol"></i> Sports</span>
+                        <span class="game-tag-compact"><i class="fas fa-dice"></i> Cards</span>
+                    </div>
+                </div>
+
+                <!-- Col 4: Contact (Compact) -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading-compact">Get in Touch</h5>
+                    <ul class="contact-info-compact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+                        <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom (Very Compact) -->
+        <div class="footer-bottom-compact">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright-compact">
+                            © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-links-bottom">
+                            <a href="#">Privacy</a>
+                            <a href="#">Terms</a>
+                            <a href="#">Cookies</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Enhanced JavaScript -->
+    <script>
+        // Gallery Filtering Function - Enhanced Version
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize gallery
+            initializeGallery();
+            
+            // Set active nav link based on current page
+            setActiveNavLink();
+        });
+
+        function initializeGallery() {
+            // Get all gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item-col');
+            
+            // Create filter buttons with counts
+            createFilterButtons(galleryItems);
+            
+            // Show all items initially
+            filterGallery('all');
+        }
+
+        function createFilterButtons(items) {
+            const filterTabs = document.getElementById('filterTabs');
+            if (!filterTabs) return;
+            
+            // Count items per category
+            const categoryCounts = {
+                all: items.length,
+                kids: 0,
+                women: 0,
+                men: 0,
+                family: 0,
+                island: 0
+            };
+            
+            items.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (category && categoryCounts.hasOwnProperty(category)) {
+                    categoryCounts[category]++;
+                }
+            });
+            
+            // Define filter buttons with icons
+            const filters = [
+                { category: 'all', label: 'All Images', icon: 'fa-images', count: categoryCounts.all },
+                { category: 'kids', label: 'Kids Games', icon: 'fa-child', count: categoryCounts.kids },
+                { category: 'women', label: 'Women Games', icon: 'fa-female', count: categoryCounts.women },
+                { category: 'men', label: 'Men Games', icon: 'fa-male', count: categoryCounts.men },
+                { category: 'family', label: 'Family Games', icon: 'fa-users', count: categoryCounts.family },
+                { category: 'island', label: 'Island', icon: 'fa-umbrella-beach', count: categoryCounts.island }
+            ];
+            
+            // Create buttons HTML
+            let buttonsHTML = '';
+            filters.forEach(filter => {
+                buttonsHTML += `
+                    <button class="filter-btn ${filter.category === 'all' ? 'active' : ''}" 
+                            onclick="filterGallery('${filter.category}', this)">
+                        <i class="fas ${filter.icon}"></i> 
+                        ${filter.label}
+                        <span class="filter-count">${filter.count}</span>
+                    </button>
+                `;
+            });
+            
+            filterTabs.innerHTML = buttonsHTML;
+        }
+
+        function filterGallery(category, btn = null) {
+            // Get all gallery items
+            const items = document.querySelectorAll('.gallery-item-col');
+            const noResults = document.getElementById('noResults');
+            
+            // Update active button if btn is provided
+            if (btn) {
+                const buttons = document.querySelectorAll('.filter-btn');
+                buttons.forEach(button => button.classList.remove('active'));
+                btn.classList.add('active');
+            } else {
+                // If no btn provided, find the button with matching category
+                const buttons = document.querySelectorAll('.filter-btn');
+                buttons.forEach(button => {
+                    if (button.getAttribute('onclick')?.includes(`'${category}'`)) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
+                });
+            }
+            
+            let visibleCount = 0;
+            
+            // Filter items with smooth transition
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                
+                if (category === 'all' || itemCategory === category) {
+                    // Show item with animation
+                    item.style.display = '';
+                    item.style.animation = 'none';
+                    item.offsetHeight; // Trigger reflow
+                    item.style.animation = 'fadeInScale 0.5s ease';
+                    visibleCount++;
+                } else {
+                    // Hide item
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide no results message
+            if (noResults) {
+                if (visibleCount === 0) {
+                    noResults.style.display = 'block';
+                    noResults.style.animation = 'fadeInScale 0.5s ease';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            // Update active count in button
+            updateActiveButtonCount(category, visibleCount);
+        }
+
+        function updateActiveButtonCount(category, count) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(button => {
+                if (button.classList.contains('active')) {
+                    const countSpan = button.querySelector('.filter-count');
+                    if (countSpan) {
+                        countSpan.textContent = count;
+                    }
+                }
+            });
+        }
+
+        // Set active navigation link based on current page
+        function setActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Popup Functions
+        function openLoginPopup() {
+            document.getElementById('loginPopup').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLoginPopup() {
+            document.getElementById('loginPopup').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openRegisterPopup() {
+            document.getElementById('registerPopup').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRegisterPopup() {
+            document.getElementById('registerPopup').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Password Toggle
+        function togglePassword(inputId, element) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                element.classList.remove('fa-eye');
+                element.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                element.classList.remove('fa-eye-slash');
+                element.classList.add('fa-eye');
+            }
+        }
+
+        // Form Handlers
+        function handleLogin(event) {
+            event.preventDefault();
+            // Add your login logic here
+            alert('Login functionality would be implemented here');
+            closeLoginPopup();
+            return false;
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            
+            // Password validation
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return false;
+            }
+            
+            // Add your registration logic here
+            alert('Registration functionality would be implemented here');
+            closeRegisterPopup();
+            return false;
+        }
+
+        // Close popups when clicking outside
+        window.onclick = function(event) {
+            const loginPopup = document.getElementById('loginPopup');
+            const registerPopup = document.getElementById('registerPopup');
+            
+            if (event.target === loginPopup) {
+                closeLoginPopup();
+            }
+            if (event.target === registerPopup) {
+                closeRegisterPopup();
+            }
+        }
+    </script>
+        <script src="./script.js"></script>
+</body>
+</html>

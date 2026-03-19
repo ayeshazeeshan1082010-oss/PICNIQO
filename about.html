@@ -1,0 +1,1300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <title>About Us- Picnic Games</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+      /* about page css */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* About Page Styles */
+.about-page {
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Hero Section - About */
+.about-hero {
+    background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+    padding: 6rem 0;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+/* Animated wave effect */
+.about-hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.about-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(200, 180, 140, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.about-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Decoration lines */
+.hero-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.decoration-line {
+    width: 50px;
+    height: 2px;
+    background: rgba(200, 180, 140, 0.4);
+}
+
+.decoration-icon {
+    color: #c8b48c;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.about-hero-subtitle {
+    color: #c8b48c;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: inline-block;
+    background: rgba(200, 180, 140, 0.1);
+    padding: 0.6rem 2rem;
+    border: 1px solid rgba(200, 180, 140, 0.3);
+    margin-bottom: 1.5rem;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+.about-hero-subtitle::before,
+.about-hero-subtitle::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #c8b48c;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.about-hero-subtitle::before {
+    left: -5px;
+}
+
+.about-hero-subtitle::after {
+    right: -5px;
+}
+
+.about-hero-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
+}
+
+.about-hero-title .gold-text {
+    color: #c8b48c;
+    position: relative;
+    display: inline-block;
+    font-style: italic;
+}
+
+.about-hero-title .gold-text::before {
+    content: '✨';
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    font-size: 2rem;
+    opacity: 0.6;
+}
+
+.about-hero-title .gold-text::after {
+    content: '✨';
+    position: absolute;
+    bottom: -20px;
+    right: -30px;
+    font-size: 2rem;
+    margin-top: 5px;
+    opacity: 0.6;
+}
+
+.about-hero-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 60px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 180, 140, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.float-icon {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.2;
+    animation: float 6s infinite ease-in-out;
+}
+
+.float-icon:nth-child(1) { top: 12%; left: 12%; animation-delay: 0s; }
+.float-icon:nth-child(2) { top: 60%; right: 10%; animation-delay: 1s; }
+.float-icon:nth-child(3) { bottom: 20%; left: 10%; animation-delay: 2s; }
+.float-icon:nth-child(4) { top: 30%; right: 25%; animation-delay: 3s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 4rem 0;
+        min-height: 400px;
+    }
+
+    .about-hero-title {
+        font-size: 3.2rem;
+    }
+
+    .about-hero-text {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .float-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .about-hero-title .gold-text::before,
+    .about-hero-title .gold-text::after {
+        font-size: 1.5rem;
+    }
+
+    .about-hero-subtitle {
+        font-size: 0.8rem;
+        padding: 0.4rem 1.5rem;
+    }
+}
+
+/* Story Section */
+.story-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.story-img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.story-tag {
+  color: #c8b48c;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.story-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0b2545;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.story-title span {
+  color: #c8b48c;
+}
+
+.story-text {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Values Section */
+.values-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000000 !important;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 span {
+  color:#a78542 !important;
+}
+
+.section-header p {
+  color: #4a5568;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(200, 180, 140, 0.1);
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(200, 180, 140, 0.1);
+  border-color: #c8b48c;
+}
+
+.value-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(200, 180, 140, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #c8b48c;
+  font-size: 2rem;
+}
+
+.value-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0b2545;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Team Section */
+.team-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.team-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(200, 180, 140, 0.1);
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(200, 180, 140, 0.15);
+  border-color: #c8b48c;
+}
+
+.team-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 1.5rem;
+}
+
+.team-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0b2545;
+  margin-bottom: 0.3rem;
+}
+
+.team-info .position {
+  color: #c8b48c;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+
+.team-info p {
+  color: #4a5568;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.team-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.team-social a {
+  color: #c8b48c;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.team-social a:hover {
+  color: #0b2545;
+}
+
+/* Stats Section */
+.stats-section {
+  background: linear-gradient(135deg, #0b2545 0%, #1b3b5c 100%);
+  padding: 4rem 0;
+  color: white;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stat-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #c8b48c;
+  margin-bottom: 0.5rem;
+}
+
+.stat-laabel {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #0b2545 0%, #1b3b5c 100%);
+  border-radius: 30px;
+  padding: 4rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+  background-size: 30px 30px;
+  opacity: 0.2;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content h2 span {
+  color: #c8b48c;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #c8b48c;
+  color: #0b2545;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #c8b48c;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: transparent;
+  color: white;
+}
+
+/* Responsive of about page */
+
+@media (max-width: 768px) {
+  .about-hero-title {
+    font-size: 2.8rem;
+  }
+
+  .story-title {
+    font-size: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .cta-box {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .team-img {
+    height: 200px;
+  }
+}
+
+
+
+    </style>
+  </head>
+  <body>
+
+
+
+    <!-- header -->
+
+      <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo - Left -->
+             <a class="navbar-brand" href="index.html">
+                <i class="fas fa-anchor me-2" style="color: var(--primary);"></i>
+                PicnicQo
+            </a>
+
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu - Center (using mx-auto) -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">about</a>
+                    </li>
+                    
+                    <!-- Dropdown - Picnic Places -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+                             <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown - Games & Activities -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Games & Activities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">contact</a>
+                    </li>
+                </ul>
+
+                <!-- Buttons - Right -->
+                <div class="nav-buttons">
+                  <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#"onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    
+    <!-- About Page -->
+
+      <!-- Hero Section -->
+<section class="about-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="about-hero-content">
+                    <!-- Decorative elements -->
+                    <div class="hero-decoration">
+                        <span class="decoration-line"></span>
+                        <span class="decoration-icon"><i class="fas fa-tree"></i></span>
+                        <span class="decoration-line"></span>
+                    </div>
+                    
+                    <span class="about-hero-subtitle">✨ About PicniQo ✨</span>
+                    
+                    <h1 class="about-hero-title">
+                        Creating <span class="gold-text">Joyful</span> Memories
+                    </h1>
+                    
+                    <p class="about-hero-text">
+                        Since 2015, we've been on a mission to bring families and friends together 
+                        through unforgettable outdoor experiences.
+                    </p>
+                    
+                    <!-- Floating icons -->
+                    <div class="floating-elements">
+                        <span class="float-icon">🧺</span>
+                        <span class="float-icon">🎪</span>
+                        <span class="float-icon">🎮</span>
+                        <span class="float-icon">🏕️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+      <!-- Story Section -->
+      <section class="story-section">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <img
+                src="./about-page-img/about-main.jpg"
+                alt="Our Story"
+                class="story-img img-fluid"
+              />
+            </div>
+            <div class="col-lg-6">
+              <span class="story-tag">ABOUT PICNIQO</span>
+              <h2 class="story-title">More Than Just <span>Picnics</span></h2>
+              <p class="story-text">
+                PicniQo was born from a simple idea: to transform ordinary
+                outdoor gatherings into extraordinary experiences. What started
+                as small family picnics has grown into a community of thousands
+                who believe in the power of togetherness.
+              </p>
+              <p class="story-text">
+                We carefully curate every detail - from scenic locations to
+                engaging games - ensuring that every moment spent with us
+                becomes a cherished memory. Our team of passionate event
+                planners works tirelessly to bring joy to families, friends, and
+                colleagues.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats-section">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-box">
+                <div class="stat-number">500+</div>
+                <div class="stat-laabel">Picnics Organized</div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-box">
+                <div class="stat-number">10K+</div>
+                <div class="stat-laabel">Happy Families</div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-box">
+                <div class="stat-number">50+</div>
+                <div class="stat-laabel">Games & Activities</div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-box">
+                <div class="stat-number">8+</div>
+                <div class="stat-laabel">Years Experience</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+      <section class="values-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="section-header">
+                <h2>Our <span>Core Values</span></h2>
+                <p>The principles that guide everything we do</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="value-card">
+                <div class="value-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <h3>Family First</h3>
+                <p>
+                  We believe in creating experiences that strengthen bonds and
+                  bring loved ones closer together.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="value-card">
+                <div class="value-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Eco-Friendly</h3>
+                <p>
+                  We're committed to sustainable practices and preserving nature
+                  for future generations.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="value-card">
+                <div class="value-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <h3>Quality First</h3>
+                <p>
+                  Every detail matters. We never compromise on the quality of
+                  our experiences.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="value-card">
+                <div class="value-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3>Community</h3>
+                <p>
+                  Building a community of picnic lovers who share their joy and
+                  experiences.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="value-card">
+                <div class="value-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <h3>Memories</h3>
+                <p>
+                  Creating moments that last a lifetime and become stories to
+                  tell.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="value-card">
+                <div class="value-icon">
+                  <i class="fas fa-smile"></i>
+                </div>
+                <h3>Happiness</h3>
+                <p>
+                  Your smile is our success. We measure our achievement in happy
+                  faces.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="section-header">
+                <h2>Meet Our <span>Team</span></h2>
+                <p>The passionate people behind your perfect picnic</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="team-card">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="Priya Sharma"
+                  class="team-img"
+                />
+                <div class="team-info">
+                  <h3>Priya Sharma</h3>
+                  <div class="position">Founder & CEO</div>
+                  <p>
+                    Visionary leader with a passion for creating joyful outdoor
+                    experiences.
+                  </p>
+                  <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="team-card">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Rahul Mehta"
+                  class="team-img"
+                />
+                <div class="team-info">
+                  <h3>Rahul Mehta</h3>
+                  <div class="position">Events Director</div>
+                  <p>
+                    Master planner who ensures every event runs smoothly and
+                    perfectly.
+                  </p>
+                  <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="team-card">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Anjali Kapoor"
+                  class="team-img"
+                />
+                <div class="team-info">
+                  <h3>Anjali Kapoor</h3>
+                  <div class="position">Game Curator</div>
+                  <p>
+                    Creative mind behind our unique and engaging game
+                    collections.
+                  </p>
+                  <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="cta-box">
+                <div class="cta-content">
+                  <h2>Ready for Your <span>Perfect Picnic?</span></h2>
+                  <p>
+                    Join thousands of happy families who've experienced the
+                    PicniQo magic.
+                  </p>
+                  <a href="index.html#booking" class="cta-btn">Plan Your Picnic</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <!-- footer -->
+    <footer class="picnic-footer-compact">
+      <div class="container footer-content">
+        <div class="row g-4">
+          <!-- Col 1: Logo + Social (Small) -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-compact">
+              <h4>Picnic<span>Play</span></h4>
+              <p>FUN & GAMES</p>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+              "
+            >
+              Outdoor & indoor games for all ages. Create memories with family
+              and friends.
+            </p>
+            <div class="social-icons-compact">
+              <a href="https://www.facebook.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links (Compact) -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading-compact">Explore</h5>
+            <ul class="footer-links-compact">
+              <li>
+                <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
+              </li>
+               <li>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a>
+              </li>
+                <a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Game Tags (Compact) -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading-compact">Game Categories</h5>
+            <div class="games-tags-compact">
+              <span class="game-tag-compact"
+                ><i class="fas fa-tree"></i> Outdoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-home"></i> Indoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-child"></i> Kids</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-female"></i> Women</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-male"></i> Men</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-users"></i> Family</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-chess"></i> Board</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-futbol"></i> Sports</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-dice"></i> Cards</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Contact (Compact) -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading-compact">Get in Touch</h5>
+            <ul class="contact-info-compact">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+              <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+              <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Very Compact) -->
+      <div class="footer-bottom-compact">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-compact">
+                © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links-bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

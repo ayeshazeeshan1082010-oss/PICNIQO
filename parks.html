@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant parks · serene escapes | PicnicGames</title>
+  <!-- Bootstrap 5 grid & utilities -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f5efe8;
+      color: #2d3e40;
+    }
+
+    /* ===== PARKS HERO SECTION - EXACTLY LIKE ABOUT PAGE ===== */
+    .parks-hero {
+      background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+      padding: 6rem 0;
+      position: relative;
+      color: white;
+      overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Animated wave effect */
+    .parks-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 2;
+    }
+
+    .parks-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, rgba(200, 180, 140, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .parks-hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Decoration lines */
+    .hero-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .decoration-line {
+      width: 50px;
+      height: 2px;
+      background: rgba(200, 180, 140, 0.4);
+    }
+
+    .decoration-icon {
+      color: #c8b48c;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .parks-hero-subtitle {
+      color: #c8b48c;
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      display: inline-block;
+      background: rgba(200, 180, 140, 0.1);
+      padding: 0.6rem 2rem;
+      border: 1px solid rgba(200, 180, 140, 0.3);
+      margin-bottom: 1.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      position: relative;
+    }
+
+    .parks-hero-subtitle::before,
+    .parks-hero-subtitle::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #c8b48c;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .parks-hero-subtitle::before {
+      left: -5px;
+    }
+
+    .parks-hero-subtitle::after {
+      right: -5px;
+    }
+
+
+    .parks-hero-text {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 60px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(200, 180, 140, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Floating Elements */
+    .floating-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .float-icon {
+      position: absolute;
+      font-size: 2.5rem;
+      opacity: 0.2;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .float-icon:nth-child(1) { top: 12%; left: 12%; animation-delay: 0s; }
+    .float-icon:nth-child(2) { top: 60%; right: 10%; animation-delay: 1s; }
+    .float-icon:nth-child(3) { bottom: 20%; left: 10%; animation-delay: 2s; }
+    .float-icon:nth-child(4) { top: 30%; right: 25%; animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    /* ===== ELEGANT PARK CARDS (Enhanced) ===== */
+    .park-card {
+      background: #ffffff;
+      border-radius: 36px;
+      overflow: hidden;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 25px 35px -12px rgba(2,70,90,0.15), 0 0 0 1px rgba(255,255,255,0.8) inset;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .park-card:hover {
+      box-shadow: 0 35px 50px -12px #0a5b78;
+      transform: translateY(-6px);
+    }
+
+    /* image side */
+.park-image {
+  padding: 0;
+  min-height: 340px;
+  background: #d9cdc0;
+  overflow: hidden;
+
+  /* SAME SHAPE AS IMAGE */
+  border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+  border: 4px solid #ffe49e;
+}
+
+    .park-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 1s ease;
+    }
+
+    .park-card:hover .park-image img {
+      transform: scale(1.05);
+    }
+
+    /* content side */
+    .park-content {
+      padding: 2.8rem 2.8rem;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .park-content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #0b2545;
+      border-left: 6px solid #c8b48c;
+      padding-left: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .park-content h2 i {
+      color: #c8b48c;
+      margin-right: 0.8rem;
+      font-size: 2.2rem;
+      opacity: 0.9;
+    }
+
+    .park-description {
+      font-size: 1rem;
+      color: #4a5a6a;
+      margin-bottom: 1.8rem;
+      line-height: 1.7;
+    }
+
+    /* activity cards */
+    .activity-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 0.5rem 0 1.4rem;
+    }
+
+    .activity-item {
+      background: #f8f4ef;
+      border-radius: 24px;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1 1 160px;
+      border: 1px solid #e2d6cc;
+      transition: all 0.3s ease;
+    }
+
+    .activity-item:hover {
+      background: #efe8e0;
+      border-color: #c8b48c;
+    }
+
+    .activity-item i {
+      font-size: 2rem;
+      color: #c8b48c;
+      min-width: 2rem;
+    }
+
+    .activity-text {
+      font-weight: 500;
+      color: #0b2545;
+      font-size: 1rem;
+    }
+
+    .activity-text small {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #6d7a8a;
+      display: block;
+    }
+
+    /* meta badges */
+    .park-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.8rem;
+      margin: 1.2rem 0 0.8rem;
+    }
+
+    .badge-park {
+      background: #f0eae3;
+      border-radius: 40px;
+      padding: 0.4rem 1.5rem;
+      font-weight: 500;
+      color: #0b2545;
+      border: 1px solid #dacbbf;
+      font-size: 0.9rem;
+    }
+
+    .badge-park i {
+      margin-right: 0.5rem;
+      color: #c8b48c;
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .tag {
+      background: white;
+      border-radius: 30px;
+      padding: 0.25rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #0b2545;
+      border: 1px solid #dfd2c8;
+    }
+
+    /* CTA button */
+    .btn-park {
+      background: var(--primary);
+      color: #000;
+      border: 2px solid var(--primary);
+      border-radius: 50px;
+      padding: 0.8rem 2.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      transition: 0.3s;
+      width: fit-content;
+      margin-top: 1.8rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .btn-park i {
+      color: #000;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-park:hover {
+      background: transparent;
+      color: #0b2545;
+    }
+
+    .btn-park:hover i {
+      transform: translateX(5px);
+      color: #c8b48c;
+    }
+
+    /* category panel */
+    .activities-panel {
+      background: rgba(255, 251, 245, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 60px;
+      padding: 2.2rem 2.5rem;
+      text-align: center;
+      border: 1px solid rgba(200, 175, 155, 0.3);
+      box-shadow: 0 15px 30px -16px #0b2545;
+      margin: 3.5rem 0 2rem;
+    }
+
+    .panel-icon {
+      display: inline-block;
+      background: #f7f0ea;
+      border-radius: 50px;
+      padding: 0.4rem 1.6rem;
+      margin: 0.3rem 0.6rem;
+      font-weight: 500;
+      color: #0b2545;
+      border: 1px solid #decfc3;
+      font-size: 0.9rem;
+    }
+
+    .panel-icon i {
+      margin-right: 0.4rem;
+      color: #c8b48c;
+    }
+
+    /* footer note */
+    .footer-note {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #5f6b7a;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #cfbeb1;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .parks-hero-title {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .parks-hero {
+        padding: 4rem 0;
+        min-height: 400px;
+      }
+
+      .parks-hero-title {
+        font-size: 2.8rem;
+      }
+
+      .parks-hero-text {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+      }
+
+      .float-icon {
+        font-size: 2rem;
+      }
+
+      .park-content {
+        padding: 2rem 1.8rem;
+      }
+      
+      .park-content h2 {
+        font-size: 2.2rem;
+      }
+      
+      .activity-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      
+      .park-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .parks-hero-title {
+        font-size: 2.2rem;
+      }
+
+      .parks-hero-title .gold-text::before,
+      .parks-hero-title .gold-text::after {
+        font-size: 1.5rem;
+      }
+
+      .parks-hero-subtitle {
+        font-size: 0.8rem;
+        padding: 0.4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-anchor me-2" style="color: var(--primary);"></i>
+        PicnicQo
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">destinations</a>
+            <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+              <li><a class="dropdown-item" href="beach.html">beach</a></li>
+              <li><a class="dropdown-item active" href="parks.html">parks</a></li>
+              <li><a class="dropdown-item" href="water-parks.html">water-parks</a></li>
+              <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Games & Activities</a>
+            <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+              <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+              <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+              <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+              <li><a class="dropdown-item" href="women.html">women games</a></li>
+              <li><a class="dropdown-item" href="men.html">men games</a></li>
+              <li><a class="dropdown-item" href="family.html">family games</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+          <a class="nav-link btn-consultation" href="#" onclick="openRegisterPopup()">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== NEW PARKS HERO SECTION - EXACT STYLE AS ABOUT PAGE ===== -->
+  <section class="parks-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="parks-hero-content">
+            <!-- Decorative elements -->
+            <div class="hero-decoration">
+              <span class="decoration-line"></span>
+              <span class="decoration-icon"><i class="fas fa-tree"></i></span>
+              <span class="decoration-line"></span>
+            </div>
+            
+            <span class="parks-hero-subtitle">✨ Serene Gardens ✨</span>
+            
+            
+            
+            <p class="parks-hero-text">
+              Discover tranquil green spaces perfect for quiet reflection, 
+              family gatherings, and outdoor recreation.
+            </p>
+            
+            <!-- Floating icons - park themed -->
+            <div class="floating-elements">
+              <span class="float-icon">🌳</span>
+              <span class="float-icon">🌿</span>
+              <span class="float-icon">🍃</span>
+              <span class="float-icon">🌸</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-container" style="max-width: 1360px; margin: 0 auto; padding: 2.5rem 1.5rem;">
+    <!-- Park Cards -->
+    
+    <!-- The Meadow -->
+    <div class="row g-0 park-card align-items-stretch">
+      <div class="col-md-6 park-image">
+        <img src="./parks img/meadow.jpg" alt="Central Park green meadow with trees" class="wave-img">
+      </div>
+      <div class="col-md-6 park-content">
+        <h2><i class="fas fa-tree"></i> The Meadow</h2>
+        <p class="park-description">Rolling lawns, ancient oaks, and a quiet pond. A place for unhurried picnics, reading under shade, and gentle walks.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-book-open"></i> <span class="activity-text">Reading corners <small>secluded</small></span></div>
+          <div class="activity-item"><i class="fas fa-feather-alt"></i> <span class="activity-text">Yoga on grass <small>morning</small></span></div>
+          <div class="activity-item"><i class="fas fa-picnic-table"></i> <span class="activity-text">Picnic tables <small>shaded</small></span></div>
+        </div>
+        <div class="park-meta">
+          <span class="badge-park"><i class="fa-regular fa-clock"></i> 6am-8pm</span>
+          <div class="tag-group"><span class="tag">quiet zone</span><span class="tag">family friendly</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-park"><i class="fas fa-map-pin"></i>Book Now</a>
+      </div>
+    </div>
+
+    <!-- Rose Pavilion -->
+    <div class="row g-0 park-card align-items-stretch flex-md-row-reverse">
+      <div class="col-md-6 park-image">
+        <img src="./parks img/rose park.jpg" alt="Rose garden with blooming flowers" class="wave-img">
+      </div>
+      <div class="col-md-6 park-content">
+        <h2><i class="fas fa-rose"></i> Rose Pavilion</h2>
+        <p class="park-description">Terraced rose gardens, fragrant pathways, and a small fountain. Ideal for quiet reflection, nature photography, and gentle strolls.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-camera"></i> <span class="activity-text">Photography <small>golden hour</small></span></div>
+          <div class="activity-item"><i class="fas fa-person-walking"></i> <span class="activity-text">Scented trails <small>self-guided</small></span></div>
+          <div class="activity-item"><i class="fas fa-fan"></i> <span class="activity-text">Gazebo seating <small>shaded</small></span></div>
+        </div>
+        <div class="park-meta">
+          <span class="badge-park"><i class="fa-regular fa-calendar"></i> peak bloom: spring</span>
+          <div class="tag-group"><span class="tag">women's club</span><span class="tag">artists</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-park"><i class="fas fa-rose"></i>Book Now</a>
+      </div>
+    </div>
+
+    <!-- The Commons -->
+    <div class="row g-0 park-card align-items-stretch">
+      <div class="col-md-6 park-image">
+        <img src="./parks img/commons park.jpg" alt="Tennis courts and green lawn" class="wave-img">
+      </div>
+      <div class="col-md-6 park-content">
+        <h2><i class="fas fa-tennis-ball"></i> The Commons</h2>
+        <p class="park-description">Manicured courts, open fields for badminton, and a shaded pavilion with board games. A hub for friendly matches and casual sport.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-table-tennis"></i> <span class="activity-text">Table tennis <small>indoor</small></span></div>
+          <div class="activity-item"><i class="fas fa-futbol"></i> <span class="activity-text">Lawn games <small>frisbee, croquet</small></span></div>
+          <div class="activity-item"><i class="fas fa-chess-queen"></i> <span class="activity-text">Chess tables <small>outdoor</small></span></div>
+        </div>
+        <div class="park-meta">
+          <span class="badge-park"><i class="fa-regular fa-clock"></i> 7am-9pm</span>
+          <div class="tag-group"><span class="tag">men's league</span><span class="tag">family games</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-park"><i class="fas fa-ticket-alt"></i>Book Now</a>
+      </div>
+    </div>
+
+    <!-- Willow Lake -->
+    <div class="row g-0 park-card align-items-stretch flex-md-row-reverse">
+      <div class="col-md-6 park-image">
+        <img src="./parks img/willow park.jpg" alt="Lake with walking path and swans" class="wave-img">
+      </div>
+      <div class="col-md-6 park-content">
+        <h2><i class="fas fa-water"></i> Willow Lake</h2>
+        <p class="park-description">Tranquil lake with weeping willows, a wooden boardwalk, and pedal boats. Perfect for sunset walks and family boating.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-ship"></i> <span class="activity-text">Rowboats <small>hourly</small></span></div>
+          <div class="activity-item"><i class="fas fa-person-running"></i> <span class="activity-text">Boardwalk <small>1.2km</small></span></div>
+          <div class="activity-item"><i class="fas fa-campground"></i> <span class="activity-text">Lakeside seating <small>benches</small></span></div>
+        </div>
+        <div class="park-meta">
+          <span class="badge-park"><i class="fa-regular fa-sun"></i> sunset spot</span>
+          <div class="tag-group"><span class="tag">couples</span><span class="tag">family</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-park"><i class="fas fa-heart"></i> Book Now</a>
+      </div>
+    </div>
+
+    <!-- Forest's Edge -->
+    <div class="row g-0 park-card align-items-stretch">
+      <div class="col-md-6 park-image">
+        <img src="./parks img/forest park.webp" alt="Wooden path through forest" class="wave-img">
+      </div>
+      <div class="col-md-6 park-content">
+        <h2><i class="fas fa-hiking"></i> Forest's Edge</h2>
+        <p class="park-description">A woodland preserve with marked trails, a small creek, and a rustic pavilion for indoor gatherings (board games, craft workshops).</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-person-hiking"></i> <span class="activity-text">Nature trails <small>3 loops</small></span></div>
+          <div class="activity-item"><i class="fas fa-puzzle-piece"></i> <span class="activity-text">Indoor games <small>pavilion</small></span></div>
+          <div class="activity-item"><i class="fas fa-dove"></i> <span class="activity-text">Bird watching <small>binoculars</small></span></div>
+        </div>
+        <div class="park-meta">
+          <span class="badge-park"><i class="fa-regular fa-building"></i> indoor + outdoor</span>
+          <div class="tag-group"><span class="tag">scouts</span><span class="tag">nature club</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-park"><i class="fas fa-binoculars"></i> Book Now</a>
+      </div>
+    </div>
+
+    <!-- Heritage Garden -->
+    <div class="row g-0 park-card align-items-stretch flex-md-row-reverse">
+      <div class="col-md-6 park-image">
+        <img src="./parks img/heritage park.webp" alt="Formal garden with fountain and hedges" class="wave-img">
+      </div>
+      <div class="col-md-6 park-content">
+        <h2><i class="fas fa-fountain"></i> Heritage Garden</h2>
+        <p class="park-description">Formal gardens with a restored fountain, rose arbors, and a tea pavilion. Senior-friendly paths and quiet reading nooks.</p>
+        <div class="activity-grid">
+          <div class="activity-item"><i class="fas fa-mug-hot"></i> <span class="activity-text">Tea pavilion <small>weekends</small></span></div>
+          <div class="activity-item"><i class="fas fa-book"></i> <span class="activity-text">Library corner <small>outdoor</small></span></div>
+          <div class="activity-item"><i class="fas fa-wheelchair"></i> <span class="activity-text">Accessible paths <small>smooth</small></span></div>
+        </div>
+        <div class="park-meta">
+          <span class="badge-park"><i class="fa-regular fa-calendar"></i> heritage tours</span>
+          <div class="tag-group"><span class="tag">seniors</span><span class="tag">quiet</span></div>
+        </div>
+        <a href="index.html#booking" class="btn-park"><i class="fas fa-camera-retro"></i> Book Now</a>
+      </div>
+    </div>
+
+    <!-- Activities Panel -->
+    <div class="activities-panel">
+      <span class="panel-icon"><i class="fas fa-child"></i> children's corners</span>
+      <span class="panel-icon"><i class="fas fa-female"></i> women's gatherings</span>
+      <span class="panel-icon"><i class="fas fa-male"></i> men's leisure</span>
+      <span class="panel-icon"><i class="fas fa-people-group"></i> family picnics</span>
+      <span class="panel-icon"><i class="fas fa-chess-board"></i> indoor pavilion</span>
+      <span class="panel-icon"><i class="fas fa-tree"></i> nature trails</span>
+      <span class="panel-icon"><i class="fas fa-heart"></i> senior sanctuaries</span>
+      <div class="mt-3 small" style="color: #887a6f;">✦ every park offers restrooms, filtered water, and graceful shade ✦</div>
+    </div>
+
+</div>
+
+        <!-- footer -->
+    <footer class="picnic-footer-compact">
+      <div class="container footer-content">
+        <div class="row g-4">
+          <!-- Col 1: Logo + Social (Small) -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-compact">
+              <h4>Picnic<span>Play</span></h4>
+              <p>FUN & GAMES</p>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+              "
+            >
+              Outdoor & indoor games for all ages. Create memories with family
+              and friends.
+            </p>
+            <div class="social-icons-compact">
+              <a href="https://www.facebook.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links (Compact) -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading-compact">Explore</h5>
+            <ul class="footer-links-compact">
+              <li>
+                <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
+              </li>
+               <li>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a>
+              </li>
+                <a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Game Tags (Compact) -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading-compact">Game Categories</h5>
+            <div class="games-tags-compact">
+              <span class="game-tag-compact"
+                ><i class="fas fa-tree"></i> Outdoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-home"></i> Indoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-child"></i> Kids</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-female"></i> Women</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-male"></i> Men</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-users"></i> Family</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-chess"></i> Board</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-futbol"></i> Sports</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-dice"></i> Cards</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Contact (Compact) -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading-compact">Get in Touch</h5>
+            <ul class="contact-info-compact">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+              <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+              <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Very Compact) -->
+      <div class="footer-bottom-compact">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-compact">
+                © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links-bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

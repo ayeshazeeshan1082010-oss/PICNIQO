@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Parks - PicniQo | Splash & Fun</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <style>
+        *,::after,::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5efe8;
+        }
+
+        /* ===== WATER PARKS PAGE - UNIQUE THEME ===== */
+        .water-page {
+            overflow-x: hidden;
+        }
+
+        /* ===== UNIQUE WATER HEADER ===== */
+        .water-header {
+            background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+            padding: 6rem 0 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .water-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+
+        .water-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, #f5efe8, transparent);
+            z-index: 2;
+        }
+
+        .water-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(200, 180, 140, 0.15);
+            border-radius: 50%;
+            animation: bubble 8s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(1) { width: 60px; height: 60px; top: 20%; left: 10%; animation-delay: 0s; }
+        .bubble:nth-child(2) { width: 40px; height: 40px; top: 70%; right: 15%; animation-delay: 1s; }
+        .bubble:nth-child(3) { width: 80px; height: 80px; bottom: 20%; left: 20%; animation-delay: 2s; }
+        .bubble:nth-child(4) { width: 30px; height: 30px; top: 40%; right: 25%; animation-delay: 3s; }
+        .bubble:nth-child(5) { width: 50px; height: 50px; bottom: 30%; right: 30%; animation-delay: 4s; }
+
+        @keyframes bubble {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-30px) scale(1.2); opacity: 0.6; }
+        }
+
+        .water-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 5;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+
+        .water-title span {
+            color: #c8b48c;
+            display: inline-block;
+            font-style: italic;
+        }
+
+        .water-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        /* ===== PARK CARDS ===== */
+        .parks-section {
+            padding: 5rem 0;
+            background: #f5efe8;
+        }
+
+        .park-card {
+            margin-bottom: 6rem;
+            position: relative;
+        }
+
+        .park-card:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== FIXED: WAVE SHAPE IMAGES ===== */
+        .park-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            min-height: 450px;
+            
+            /* WAVE SHAPE - exact same as women's page */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+            
+            /* Remove any extra borders/shadow */
+            border: none;
+            outline: none;
+            box-shadow: 0 20px 25px -8px rgba(200, 113, 75, 0.5);
+        }
+
+        .park-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            
+            /* Image follows same wave shape */
+            border-radius: 40% 8% 40% 8% / 30% 12% 30% 12%;
+        }
+
+        .park-image-wrapper:hover .park-image {
+            transform: scale(1.05);
+        }
+
+        /* Gold Corner Accents - same as women's page */
+        .park-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-top: 2px solid #c8b48c;
+            border-left: 2px solid #c8b48c;
+            z-index: 10;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .park-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid #c8b48c;
+            border-right: 2px solid #c8b48c;
+            z-index: 10;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Water Badge */
+        .water-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #c8b48c;
+            color: #0b2545;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 20;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Splash Effect */
+        .splash-effect {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background: rgba(200, 180, 140, 0.2);
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* Content Side */
+        .park-content-wrapper {
+            padding: 2.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            box-shadow: 0 20px 40px -12px rgba(11, 37, 69, 0.2);
+        }
+
+        .park-category {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            font-size: 1.5rem;
+        }
+
+        .category-text {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #c8b48c;
+            font-weight: 600;
+        }
+
+        .park-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .park-name span {
+            color: #c8b48c;
+            font-size: 1.8rem;
+            display: block;
+            font-style: italic;
+        }
+
+        .park-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a5a6a;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            background: rgba(200, 180, 140, 0.08);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            width: fit-content;
+            border: 1px solid rgba(200, 180, 140, 0.2);
+        }
+
+        .park-location i {
+            color: #c8b48c;
+        }
+
+        .park-description {
+            color: #4a5a6a;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+        }
+
+        /* Water Features */
+        .water-features {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .water-feat {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .water-feat-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            font-size: 1.1rem;
+        }
+
+        .water-feat-text h6 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #0b2545;
+            margin-bottom: 0.2rem;
+        }
+
+        .water-feat-text p {
+            font-size: 0.8rem;
+            color: #4a5a6a;
+            margin-bottom: 0;
+        }
+
+        /* Attractions Tags */
+        .attractions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .attraction-tag {
+            background: rgba(200, 180, 140, 0.08);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #0b2545;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .attraction-tag i {
+            color: #c8b48c;
+        }
+
+        /* Book Button */
+.water-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--primary);
+    /* color: #cd2e2e00 !important; */
+    padding: 0.8rem 2.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    width: fit-content;
+}
+
+        .water-btn i {
+            color: #000;
+            transition: transform 0.3s ease;
+        }
+
+        .water-btn:hover {
+            background: transparent;
+            color: #000;
+        }
+
+        .water-btn:hover i {
+            transform: translateX(5px);
+            color: #000 !important;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .water-stats {
+            background: var(--light);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .water-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+
+        .stat-card {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            background: var(--dark) !important;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: #c8b48c;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #c8b48c;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #c8b48c;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff !important;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .water-cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #0b2545 0%, #1a3b5c 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .water-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(200,180,140,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+            background-size: 30px 30px;
+            opacity: 0.2;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content h2 span {
+            color: #c8b48c;
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-water-btn {
+            display: inline-block;
+            background: #c8b48c;
+            color: #0b2545;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #c8b48c;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+        }
+
+        .cta-water-btn:hover {
+            background: transparent;
+            color: #c8b48c;
+        }
+
+        /* ===== FOOTER ===== */
+        .picnic-footer-compact {
+            background: #0a1f2e;
+            color: #fff;
+            position: relative;
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-logo-compact h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c8b48c;
+        }
+
+        .footer-logo-compact p {
+            color: rgba(200, 180, 140, 0.7);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-heading-compact {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading-compact::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #c8b48c;
+        }
+
+        .footer-links-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links-compact li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links-compact a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links-compact a:hover {
+            color: #c8b48c;
+            transform: translateX(5px);
+        }
+
+        .footer-links-compact a i {
+            margin-right: 5px;
+            color: #c8b48c;
+        }
+
+        .games-tags-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .game-tag-compact {
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .game-tag-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+        }
+
+        .contact-info-compact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info-compact li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+        }
+
+        .contact-info-compact li i {
+            color: #c8b48c;
+            width: 18px;
+        }
+
+        .social-icons-compact {
+            display: flex;
+            gap: 0.8rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .social-icon-compact {
+            width: 32px;
+            height: 32px;
+            background: rgba(200, 180, 140, 0.1);
+            border: 1px solid rgba(200, 180, 140, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8b48c;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-compact:hover {
+            background: #c8b48c;
+            color: #0a1f2e;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom-compact {
+            border-top: 1px solid rgba(200, 180, 140, 0.15);
+            padding: 1rem 0;
+        }
+
+        .copyright-compact {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+        }
+
+        .copyright-compact a {
+            color: #c8b48c;
+            text-decoration: none;
+        }
+
+        .footer-links-bottom {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+
+        .footer-links-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .footer-links-bottom a:hover {
+            color: #c8b48c;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .water-title {
+                font-size: 4rem;
+            }
+            
+            .park-name {
+                font-size: 2.2rem;
+            }
+            
+            .park-name span {
+                font-size: 1.6rem;
+            }
+            
+            .park-image-wrapper {
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .water-title {
+                font-size: 3rem;
+            }
+            
+            .water-subtitle {
+                font-size: 1rem;
+            }
+            
+            .park-image-wrapper {
+                min-height: 300px;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .park-content-wrapper {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .water-title {
+                font-size: 2.2rem;
+            }
+            
+            .park-name {
+                font-size: 1.8rem;
+            }
+            
+            .park-name span {
+                font-size: 1.4rem;
+            }
+            
+            .water-features {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-anchor me-2" style="color: #c8b48c;"></i>
+                PicnicQo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="destinations.html" id="placesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">destinations</a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><a class="dropdown-item" href="beach.html">beach</a></li>
+                            <li><a class="dropdown-item" href="parks.html">parks</a></li>
+                            <li><a class="dropdown-item active" href="water-parks.html">water-parks</a></li>
+                            <li><a class="dropdown-item" href="farm-house.html">farm-house</a></li>
+                            <li><a class="dropdown-item" href="island.html">island</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Games & Activities</a>
+                        <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">indoor games</a></li>
+                            <li><a class="dropdown-item" href="outdoor.html">outdoor games</a></li>
+                            <li><a class="dropdown-item" href="kids.html">kids games</a></li>
+                            <li><a class="dropdown-item" href="women.html">women games</a></li>
+                            <li><a class="dropdown-item" href="men.html">men games</a></li>
+                            <li><a class="dropdown-item" href="family.html">family games</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a class="nav-link btn-consultation" href="#" onclick="openLoginPopup()">Login</a>
+                    <a class="nav-link btn-consultation" href="#" onclick="openRegisterPopup()">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Water Parks Page -->
+    <div class="water-page">
+        <!-- Header with Water Theme -->
+        <header class="water-header">
+            <div class="water-bubbles">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+            <div class="container">
+                <h1 class="water-title">
+                    Splash <span>Zone</span>
+                </h1>
+                <p class="water-subtitle">Dive into the Ultimate Water Adventure!</p>
+            </div>
+        </header>
+
+        <!-- Water Parks Section -->
+        <section class="parks-section">
+            <div class="container">
+                <!-- PARK 1: Image Left, Content Right -->
+                <div class="row park-card align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="park-image-wrapper">
+                            <img src="./games-img/Fun-Filled Water Park Adventure.jpg" alt="The Great Fiesta Family Water Park" class="park-image">
+                            <div class="water-badge">
+                                <i class="fas fa-star"></i> Most Popular
+                            </div>
+                            <div class="splash-effect"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="park-content-wrapper">
+                            <div class="park-category">
+                                <div class="category-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <span class="category-text">PREMIUM PARK</span>
+                            </div>
+                            <h2 class="park-name">
+                                The Great<span>Fiesta Family Water Park</span>
+                            </h2>
+                            <div class="park-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Karachi</span>
+                            </div>
+                            <p class="park-description">
+                                Karachi's largest water park with over 30 total water attractions, including 14 dedicated slides for adults and 17 for children. The park is known for its wide variety of, including a Hurricane Wave Pool, a Lazy River, and a dedicated Kids Zone with splash pads and mini slides. With its family-friendly atmosphere, The Great Fiesta offers something for everyone, making it a top choice for water fun in Karachi.
+                            </p>
+                            <div class="water-features">
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-water-ladder"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>25+ Rides</h6>
+                                        <p>Adventure slides</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-swimmer"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Wave Pool</h6>
+                                        <p>Artificial waves</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Lazy River</h6>
+                                        <p>Relaxing float</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="attractions">
+                                <span class="attraction-tag"><i class="fas fa-bolt"></i> Speed Slides</span>
+                                <span class="attraction-tag"><i class="fas fa-child"></i> Kids Zone</span>
+                                <span class="attraction-tag"><i class="fas fa-utensils"></i> Food Court</span>
+                            </div>
+                            <a href="https://www.thegreatfiesta.com/" class="water-btn" target="_blank">
+                                Book Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARK 2: Image Right, Content Left -->
+                <div class="row park-card align-items-center g-5 flex-lg-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="park-image-wrapper">
+                            <img src="./games-img/SUNWAY LAGOON WATER PARK.jpg" alt="SUNWAY LAGOON WATER PARK" class="park-image">
+                            <div class="water-badge">
+                                <i class="fas fa-bolt"></i> New Attraction
+                            </div>
+                            <div class="splash-effect"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="park-content-wrapper">
+                            <div class="park-category">
+                                <div class="category-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <span class="category-text">WATER PARK</span>
+                            </div>
+                            <h2 class="park-name">
+                                SUNWAY LAGOON<span>WATER PARK</span>
+                            </h2>
+                            <div class="park-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Karachi</span>
+                            </div>
+                            <p class="park-description">
+                                Sunway Lagoon Water Park in near Karachi is highly rated for its clean, well-maintained facilities, offering a, family-friendly, and safe environment with numerous, thrilling slides and a large, popular wave pool
+                            </p>
+                            <div class="water-features">
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-water-ladder"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Thrilling Slides</h6>
+                                        <p>+25</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Water Park</h6>
+                                        <p>10-12 swimming pools</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-cocktail"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Lazy River</h6>
+                                        <p>Relaxing water ride</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="attractions">
+                                <span class="attraction-tag"><i class="fas fa-bolt"></i> Wave Pool</span>
+                                <span class="attraction-tag"><i class="fas fa-water"></i> Lazy River</span>
+                                <span class="attraction-tag"><i class="fas fa-music"></i> Beach Party</span>
+                            </div>
+                            <a href="https://www.hfunwaterparktube.com/pakistan-sunway-lagoon-waterpark_n67" class="water-btn" target="_blank">
+                                Book Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARK 3: Image Left, Content Right -->
+                <div class="row park-card align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="park-image-wrapper">
+                            <img src="./games-img/paradise.jpg" alt="Paradise Water Park" class="park-image">
+                            <div class="water-badge">
+                                <i class="fas fa-family"></i> Family Favorite
+                            </div>
+                            <div class="splash-effect"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="park-content-wrapper">
+                            <div class="park-category">
+                                <div class="category-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <span class="category-text">FAMILY PARK</span>
+                            </div>
+                            <h2 class="park-name">
+                                Paradise<span>Water Park</span>
+                            </h2>
+                            <div class="park-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bangalore, Karnataka</span>
+                            </div>
+                            <p class="park-description">
+                                A paradise for families with kids! Dedicated children's pool, gentle slides, 
+                                splash pads, and family raft rides for everyone to enjoy together.
+                            </p>
+                            <div class="water-features">
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-child"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Kids Zone</h6>
+                                        <p>Safe & fun</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Splash Pad</h6>
+                                        <p>Interactive</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-people-arrows"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Family Raft</h6>
+                                        <p>4-6 seater</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="attractions">
+                                <span class="attraction-tag"><i class="fas fa-child"></i> Kiddie Pool</span>
+                                <span class="attraction-tag"><i class="fas fa-water"></i> Rain Dance</span>
+                                <span class="attraction-tag"><i class="fas fa-utensils"></i> Family Cafe</span>
+                            </div>
+                            <a href="https://www.karachifunclub.com/paradise-island-water-park" class="water-btn" target="_blank">
+                                Book Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PARK 4: Image Right, Content Left -->
+                <div class="row park-card align-items-center g-5 flex-lg-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="park-image-wrapper">
+                            <img src="https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Adventure Cove" class="park-image">
+                            <div class="water-badge">
+                                <i class="fas fa-skull"></i> Thrill Seeker
+                            </div>
+                            <div class="splash-effect"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="park-content-wrapper">
+                            <div class="park-category">
+                                <div class="category-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <span class="category-text">ADVENTURE PARK</span>
+                            </div>
+                            <h2 class="park-name">
+                                Adventure <span>Cove</span>
+                            </h2>
+                            <div class="park-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hyderabad, Telangana</span>
+                            </div>
+                            <p class="park-description">
+                                For adrenaline junkies! Experience India's tallest water slide, vortex tunnels, 
+                                and extreme water coasters that will leave you breathless.
+                            </p>
+                            <div class="water-features">
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>40m Drop</h6>
+                                        <p>Tallest slide</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-hurricane"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Vortex</h6>
+                                        <p>Twisting tunnel</p>
+                                    </div>
+                                </div>
+                                <div class="water-feat">
+                                    <div class="water-feat-icon">
+                                        <i class="fas fa-roller-coaster"></i>
+                                    </div>
+                                    <div class="water-feat-text">
+                                        <h6>Water Coaster</h6>
+                                        <p>Uphill thrill</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="attractions">
+                                <span class="attraction-tag"><i class="fas fa-bolt"></i> Extreme Slides</span>
+                                <span class="attraction-tag"><i class="fas fa-hurricane"></i> Vortex</span>
+                                <span class="attraction-tag"><i class="fas fa-bomb"></i> Drop Zone</span>
+                            </div>
+                            <a href="https://dreamworld.pk/?AspxAutoDetectCookieSupport=1" class="water-btn" target="_blank">
+                                Book Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="water-stats">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Water Parks</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-water-ladder"></i>
+                            </div>
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Water Rides</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Happy Visitors</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">Visitor Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="water-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to <span>Splash?</span></h2>
+                    <p>Book your tickets now and dive into the ultimate water adventure with your family and friends!</p>
+                    <a href="contact.html" class="cta-water-btn">Plan Your Picnic</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+ 
+
+    <!-- footer -->
+    <footer class="picnic-footer-compact">
+      <div class="container footer-content">
+        <div class="row g-4">
+          <!-- Col 1: Logo + Social (Small) -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-compact">
+              <h4>Picnic<span>Play</span></h4>
+              <p>FUN & GAMES</p>
+            </div>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.8rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+              "
+            >
+              Outdoor & indoor games for all ages. Create memories with family
+              and friends.
+            </p>
+            <div class="social-icons-compact">
+              <a href="https://www.facebook.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/" class="social-icon-compact"
+                target="_blank"><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links (Compact) -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading-compact">Explore</h5>
+            <ul class="footer-links-compact">
+              <li>
+                <a href="about.html"><i class="fas fa-angle-right"></i> About Us</a>
+              </li>
+               <li>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="gallery.html"><i class="fas fa-angle-right"></i> Gallery</a>
+              </li>
+                <a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Game Tags (Compact) -->
+          <div class="col-lg-4 col-md-6">
+            <h5 class="footer-heading-compact">Game Categories</h5>
+            <div class="games-tags-compact">
+              <span class="game-tag-compact"
+                ><i class="fas fa-tree"></i> Outdoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-home"></i> Indoor</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-child"></i> Kids</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-female"></i> Women</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-male"></i> Men</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-users"></i> Family</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-chess"></i> Board</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-futbol"></i> Sports</span
+              >
+              <span class="game-tag-compact"
+                ><i class="fas fa-dice"></i> Cards</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Contact (Compact) -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading-compact">Get in Touch</h5>
+            <ul class="contact-info-compact">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Park Avenue, NY</li>
+              <li><i class="fas fa-phone-alt"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> hello@picnicplay.com</li>
+              <li><i class="fas fa-clock"></i> 9 AM - 8 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Very Compact) -->
+      <div class="footer-bottom-compact">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="copyright-compact">
+                © 2024 <a href="#">PicnicPlay</a> | All rights reserved
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links-bottom">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== LOGIN POPUP ===== -->
+<div class="popup-overlay" id="loginPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeLoginPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Welcome <span>Back!</span></h2>
+            <p>Sign in to continue your picnic adventures</p>
+        </div>
+
+        <!-- Popup Body - Login Form -->
+        <div class="popup-body">
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="row-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or login with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register-link">
+                Don't have an account? <a href="#">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== REGISTER POPUP (SIRF REGISTER WALA) ===== -->
+<div class="popup-overlay" id="registerPopup">
+    <div class="popup-container">
+        <!-- Close Button -->
+        <div class="popup-close" onclick="closeRegisterPopup()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <!-- Popup Header -->
+        <div class="popup-header">
+            <h2>Join <span>PicniQo</span></h2>
+            <p>Create your account and start your picnic adventures!</p>
+        </div>
+
+        <!-- Popup Body - Register Form -->
+        <div class="popup-body">
+            <form id="registerForm" onsubmit="return handleRegister(event)">
+                <!-- Name Row - First & Last Name -->
+                <div class="name-row">
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('registerPassword', this)"></i>
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="input-group-custom">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="register-btn">
+                    <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or register with</span>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+                <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <!-- Login Link -->
+            <div class="login-link">
+                Already have an account? <a href="#" onclick="openLoginPopup(); closeRegisterPopup(); return false;">Sign in here</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
